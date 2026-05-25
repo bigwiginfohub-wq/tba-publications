@@ -2,8 +2,7 @@
 
 **The Bridge Architect Publications — HuAi**
 
-**License:** CC0 1.0  
-[![CC0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+**License:** CC0 1.0 (Public Domain Dedication)
 **Repository:** https://github.com/bigwiginfohub-wq/tba-publications
 
 ---
