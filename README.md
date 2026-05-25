@@ -105,7 +105,9 @@ hypothesis_origin.md	How this research started
 simulation_framework.md	Test design (S1A–S1F) and mathematical model
 call_for_simulators.md	Invitation to contribute
 code/	Python scripts for N-body simulations
-The Hum Method
+```
+
+## The Hum Method
 A novel framework for harvesting waste 50/60 Hz acoustic energy from transformers and power grids.
 
 Principle	Description
