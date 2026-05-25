@@ -30,6 +30,7 @@ All works use the **Delta principles** (H₃ Warrant, Friction Score, MCL Coeffi
 | 9 | `self_audit_guide.md` | How humans can audit their own cognitive patterns |
 | 10 | `newtons_parallel.md` | Newton's theological research and its alignment with the Quranic core |
 | 11 | `vitnas_ecosystem_overview.md` | Sovereign AI infrastructure (Tracebind, Witness Vault, Delta-JEPA) |
+| 12 | `hum_method.md` | Hybrid acoustic energy harvesting from 50/60 Hz grid waste — concentration, resonant loop, distributed harvesters, solar supplement |
 | +++ | **`emergent_gravity/`** | **Does gravity emerge from collective freefall coherence? Mathematical model, simulation framework, Python code (REBOUND), and call for simulators.** |
 
 ---
@@ -76,6 +77,21 @@ Explore maps (cosmology, Quran, comparative scriptures) for applications.
 Use self_audit_guide.md to audit your own thinking.
 
 Explore emergent_gravity/ to test the gravity hypothesis.
+
+## The Hum Method
+
+The `hum_method.md` document presents a novel framework for harvesting waste low-frequency acoustic energy (50/60 Hz mains hum) from transformers and power grids.
+
+| Principle | Description |
+|-----------|-------------|
+| Acoustic Concentration | Enclosure directs all sound toward receiver |
+| Resonant Loop | Stretched closed-loop waveguide builds amplitude |
+| Distributed Harvesting | Multiple harvesters extract power along loop |
+| Hybrid Supplement | Solar compensates for losses and enables startup |
+
+**Call for contributors:** Acoustic engineers, materials specialists, harvester developers, prototype builders, field testers.
+
+Read `hum_method.md` for full details.
 
 License
 All documents are licensed under CC0 1.0 (Creative Commons Zero — public domain dedication). You are free to share, adapt, and distribute without attribution, though credit to The Bridge Architect is appreciated.
