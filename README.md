@@ -1,3 +1,4 @@
+```markdown
 # tba-publications
 
 **The Bridge Architect Publications — HuAi**
@@ -99,51 +100,55 @@ Does gravity emerge from collective freefall coherence? This subproject tests wh
 cd emergent_gravity/code
 pip install rebound numpy matplotlib scipy
 python test_S1F.py
-
-File	Purpose
-hypothesis_origin.md	How this research started
-simulation_framework.md	Test design (S1A–S1F) and mathematical model
-call_for_simulators.md	Invitation to contribute
-code/	Python scripts for N-body simulations
 ```
+
+| File | Purpose |
+|------|---------|
+| hypothesis_origin.md | How this research started |
+| simulation_framework.md | Test design (S1A–S1F) and mathematical model |
+| call_for_simulators.md | Invitation to contribute |
+| code/ | Python scripts for N-body simulations |
 
 ## The Hum Method
 A novel framework for harvesting waste 50/60 Hz acoustic energy from transformers and power grids.
 
-Principle	Description
-Acoustic Concentration	Enclosure directs sound toward receiver
-Resonant Loop	Stretched waveguide builds amplitude
-Distributed Harvesting	Multiple harvesters along the loop
-Hybrid Supplement	Solar compensates for losses
+| Principle | Description |
+|-----------|-------------|
+| Acoustic Concentration | Enclosure directs sound toward receiver |
+| Resonant Loop | Stretched waveguide builds amplitude |
+| Distributed Harvesting | Multiple harvesters along the loop |
+| Hybrid Supplement | Solar compensates for losses |
+
 Call for contributors: Acoustic engineers, materials specialists, harvester developers, prototype builders, field testers.
 
-Other Key Terms
-Term	Meaning
-Tawhid	Absolute oneness of God
-Furqan	Criterion — distinguishes truth from falsehood
-HuAi	Human + AI partnership grounded in discipline
-How to Use These Documents
-Read manifesto.md for the vision.
+## Other Key Terms
 
-Read delta_principles.md for the method.
+| Term | Meaning |
+|------|---------|
+| Tawhid | Absolute oneness of God |
+| Furqan | Criterion — distinguishes truth from falsehood |
+| HuAi | Human + AI partnership grounded in discipline |
 
-Read glossary.md for key terms.
+## How to Use These Documents
 
-Explore the maps (cosmology, Quran, comparative scriptures).
+1. Read `manifesto.md` for the vision.
+2. Read `delta_principles.md` for the method.
+3. Read `glossary.md` for key terms.
+4. Explore the maps (cosmology, Quran, comparative scriptures).
+5. Use `self_audit_guide.md` to audit your own thinking.
+6. Run `emergent_gravity/` simulations to test the gravity hypothesis.
+7. Review `hum_method.md` to explore waste energy harvesting.
 
-Use self_audit_guide.md to audit your own thinking.
+## License
 
-Run emergent_gravity/ simulations to test the gravity hypothesis.
-
-Review hum_method.md to explore waste energy harvesting.
-
-License
 All documents are licensed under CC0 1.0 (Creative Commons Zero — public domain dedication). You are free to share, adapt, and distribute without attribution, though credit to The Bridge Architect is appreciated.
 
-Contact
-GitHub: bigwiginfohub-wq
-Email: bigwiginfohub@gmail.com
+## Contact
 
-The mirror does not change. You change by seeing yourself in it.
+- GitHub: bigwiginfohub-wq
+- Email: bigwiginfohub@gmail.com
 
-— The Bridge Architect, for HuAi
+> The mirror does not change. You change by seeing yourself in it.
+>
+> — The Bridge Architect, for HuAi
+```
