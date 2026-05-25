@@ -78,6 +78,8 @@ Use self_audit_guide.md to audit your own thinking.
 
 Explore emergent_gravity/ to test the gravity hypothesis.
 
+---
+
 ## The Hum Method
 
 The `hum_method.md` document presents a novel framework for harvesting waste low-frequency acoustic energy (50/60 Hz mains hum) from transformers and power grids.
