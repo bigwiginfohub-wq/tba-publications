@@ -1,0 +1,4 @@
+rebound
+numpy
+matplotlib
+scipy
