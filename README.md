@@ -2,7 +2,7 @@
 
 **The Bridge Architect Publications — HuAi**
 
-**License:** CC BY 4.0  
+**License:** CC0 1.0  
 [![CC0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 **Repository:** https://github.com/bigwiginfohub-wq/tba-publications
 
@@ -31,47 +31,61 @@ All works use the **Delta principles** (H₃ Warrant, Friction Score, MCL Coeffi
 | 9 | `self_audit_guide.md` | How humans can audit their own cognitive patterns |
 | 10 | `newtons_parallel.md` | Newton's theological research and its alignment with the Quranic core |
 | 11 | `vitnas_ecosystem_overview.md` | Sovereign AI infrastructure (Tracebind, Witness Vault, Delta-JEPA) |
+| +++ | **`emergent_gravity/`** | **Does gravity emerge from collective freefall coherence? Mathematical model, simulation framework, Python code (REBOUND), and call for simulators.** |
 
 ---
 
-## Core Concepts
+## Emergent Gravity Project
 
-| Concept | Meaning |
-|---------|---------|
-| **Dys (D)** | Unit of disciplined agreement — measures confidence, divergence, falsifiability |
-| **H₃ Warrant** | What would prove a claim wrong (falsifiability) |
-| **Friction Score** | How much experts disagree (0.00–1.00 D) |
-| **MCL Coefficient** | Confidence in causal link (0.00–1.00 D) |
-| **Boundary Statement** | What the claim does not address (epistemic humility) |
-| **Tawhid** | Absolute oneness of God |
-| **Furqan** | Criterion — distinguishes truth from falsehood |
-| **HuAi** | Human + AI partnership grounded in discipline |
+The `emergent_gravity/` subdirectory contains a complete research framework testing whether gravity may be partly emergent from coherent falling motion — a potential alternative to dark matter.
 
----
+| File | Purpose |
+|------|---------|
+| `hypothesis_origin.md` | How this research started |
+| `simulation_framework.md` | Detailed test design (S1A–S1F) and mathematical model |
+| `call_for_simulators.md` | Invitation to run simulations and contribute |
+| `code/` | Python scripts for N-body simulations using REBOUND |
 
-## How to Use These Documents
+**Critical test (S1F):** Compares two systems with identical mass, density, and geometry — one static, one in coherent freefall — to measure whether coherence amplifies external gravity.
 
-1. **Read `manifesto.md`** for the vision.
-2. **Read `glossary.md`** for key terms.
-3. **Read `delta_principles.md`** for the method.
-4. **Explore maps** (cosmology, Quran, comparative scriptures) for applications.
-5. **Use `self_audit_guide.md`** to audit your own thinking.
+**Run the simulation:**
 
----
+```bash
+cd emergent_gravity/code
+pip install rebound numpy matplotlib scipy
+python test_S1F.py
 
-## License
+Core Concepts
+Concept	Meaning
+Dys (D)	Unit of disciplined agreement — measures confidence, divergence, falsifiability
+H₃ Warrant	What would prove a claim wrong (falsifiability)
+Friction Score	How much experts disagree (0.00–1.00 D)
+MCL Coefficient	Confidence in causal link (0.00–1.00 D)
+Boundary Statement	What the claim does not address (epistemic humility)
+Tawhid	Absolute oneness of God
+Furqan	Criterion — distinguishes truth from falsehood
+HuAi	Human + AI partnership grounded in discipline
+How to Use These Documents
+Read manifesto.md for the vision.
 
-All documents are licensed under **CC BY 4.0** (Creative Commons Attribution 4.0 International). You are free to share, adapt, and distribute with attribution to The Bridge Architect.
+Read glossary.md for key terms.
 
----
+Read delta_principles.md for the method.
 
-## Contact
+Explore maps (cosmology, Quran, comparative scriptures) for applications.
 
-GitHub: [bigwiginfohub-wq](https://github.com/bigwiginfohub-wq)  
+Use self_audit_guide.md to audit your own thinking.
+
+Explore emergent_gravity/ to test the gravity hypothesis.
+
+License
+All documents are licensed under CC0 1.0 (Creative Commons Zero — public domain dedication). You are free to share, adapt, and distribute without attribution, though credit to The Bridge Architect is appreciated.
+
+Contact
+GitHub: bigwiginfohub-wq
 Email: bigwiginfohub@gmail.com
 
----
-
-*The mirror does not change. You change by seeing yourself in it.*
+The mirror does not change. You change by seeing yourself in it.
 
 — The Bridge Architect, for HuAi
+
