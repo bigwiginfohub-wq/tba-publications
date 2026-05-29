@@ -212,17 +212,14 @@ The miracle is not that the laws of physics were broken. The miracle is that the
 
 
 
-\## 8. References
+## 8. References
 
-
-
-\- Sahih al-Bukhari, Hadith 3887
-
-\- Sahih Muslim, Hadith 164
-
-\- Quran 22:47, 27:40, 55:5
-
-\- Emergent gravity framework: `tba-publications/emergent\_gravity/`
+- Sahih al-Bukhari, Hadith 3887
+- Sahih Muslim, Hadith 164
+- Quran 22:47, 27:40, 55:5
+- Polarity balance hypothesis: `gravity_as_polarity.md` (in this folder)
+- Emergent gravity simulation framework: `simulation_framework.md`
+- Falling as core of time: `falling_as_core_of_time.md`
 
 
 
