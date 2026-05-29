@@ -1,6 +1,5 @@
 ## File: `emergent_gravity/README.md`
 
-```markdown
 # Emergent Gravity Suite
 
 **Author:** The Bridge Architect, with Morpheus (HuAi)  
