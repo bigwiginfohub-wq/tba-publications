@@ -177,7 +177,15 @@ All predictions are within detectable range of a torsion balance with 1e-9 N·m 
 
 The parameter sweep confirms that the emergent gravity model produces testable, falsifiable predictions. Density is the dominant parameter. Coherence amplifies density but cannot replace it.
 
+## Acknowledgment of Magnitude Concerns
 
+The parameter sweep shows amplification ratios ranging from 1.000× to 9.150× (0–815% increase). The S1F validation run with ρ_critical = 0.01 produced a 15.3% increase (ratio = 1.153).
+
+**These magnitudes (8–50%) are likely too large** and may already be excluded by existing experiments (flywheels, torsion balances, atom interferometers).
+
+Version 2 of the model will target much smaller effects (10⁻⁶ – 10⁻⁸) once ρ_critical and the coefficients are derived from physical principles rather than chosen arbitrarily.
+
+See `experimental_bounds.md` for ongoing comparison with experimental data.
 
 The hypothesis is now quantified. Experimental validation is the next step.
 
