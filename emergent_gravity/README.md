@@ -1,6 +1,6 @@
 # File: `emergent_gravity/README.md` (Updated)
 
-```markdown
+
 # Emergent Gravity Hypothesis
 
 **Does gravity emerge from collective freefall coherence?**
