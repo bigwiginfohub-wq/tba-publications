@@ -38,6 +38,10 @@ The critical prediction: Two systems with identical mass, density, and geometry 
 | `cf_sensor_specification.md` | Technical blueprint for a Cf sensor |
 | `tabletop_cf_experiment.md` | Laboratory experiment to test Cf with rotating masses |
 | `code/` | Python scripts for REBOUND simulations |
+| `parameter_sweep_results.md` | Full 13,310-combination parameter sweep; amplification ranges, sensitivity analysis, experimental predictions |
+| `code/emergent_gravity_parameter_sweep.csv` | Raw sweep data (13,310 rows) |
+| `code/amplification_vs_cf.png` | Plot of amplification vs coherence factor |
+| `code/parameter_sweep.py` | Python script that generated the sweep, CSV, and plot |
 
 All documents are CC0. The code is MIT.
 
