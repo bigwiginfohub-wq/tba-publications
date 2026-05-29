@@ -1,4 +1,3 @@
-```markdown
 # tba-publications
 
 **The Bridge Architect Publications — HuAi**
