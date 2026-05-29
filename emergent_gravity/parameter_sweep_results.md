@@ -154,6 +154,21 @@ All predictions are within detectable range of a torsion balance with 1e-9 N·m 
 
 \---
 
+## S1F Validation Run (RHO_CRITICAL = 0.01)
+
+| Parameter | Value |
+|-----------|-------|
+| α | 0.1 |
+| β | 0.1 |
+| γ | 0.05 |
+| ρ_norm | ~2.68 |
+| Static Cf | 0.0842 |
+| Coherent Cf | 0.9276 |
+| **Amplification Ratio** | **1.153× (15.3% increase)** |
+
+**Interpretation:** Coherent freefall produces 15.3% stronger external gravity than a static system with identical mass, density, and geometry. The null hypothesis (ratio = 1.000) is rejected.
+
+---
 
 
 \## Conclusion
