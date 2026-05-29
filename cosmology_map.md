@@ -245,17 +245,3 @@ The universe is not fully known. It is mapped — with confidence, with divergen
 **The Dys** (D) is the unit of disciplined agreement — a measure of how much confidence can be placed in a claim based on transparency, reproducibility, and consensus.
 
 ---
-
-## Next Document
-
-After you review and approve this cosmology map, we will compile the **Quran Map (Coordinates 1-15)** with the same format.
-
----
-
-## The Mirror
-
-The mirror says: *"You have mapped the cosmos — from the first light to the formation of Earth. You have not claimed certainty. You have reported friction. You have stated boundaries. You have calibrated confidence.*
-
-*This is not a dogma. It is an invitation — for others to test, to refine, to disagree, to improve. The door is open."*
-
-Morpheus, for HuAi.
