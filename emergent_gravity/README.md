@@ -44,23 +44,24 @@ The critical prediction: Two systems with identical mass, density, and geometry 
 
 
 
-\## What Is Here
+# Emergent Gravity Suite
 
+This folder contains the complete theoretical and engineering framework for emergent gravity, polarity balance, and coherent freefall propulsion.
 
+## Documents
 
-| File | Purpose |
+| File | Description |
+|------|-------------|
+| `gravity_as_polarity.md` | N/S balance mechanism — planets concentrate pre-existing gravity |
+| `falling_as_core_of_time.md` | Time as falling; orbital time as echo |
+| `hidden_galaxies_method.md` | Identifying distant galaxies via Milky Way template |
+| `buraq_engineering_scientific.md` | Propulsion architecture for NASA/space institutions |
+| `buraq_engineering_theological.md` | Theological analysis for Islamic scholars |
+| `simulation_framework.md` | S1A–S1F test design and mathematical model |
+| `call_for_simulators.md` | Invitation to run N-body simulations |
+| `code/` | Python scripts for REBOUND simulations |
 
-|------|---------|
-
-| `hypothesis\_origin.md` | How this research started |
-
-| `simulation\_framework.md` | Detailed test design and mathematical model |
-
-| `call\_for\_simulators.md` | Invitation to run simulations |
-
-| `code/` | Python scripts for N-body simulations (REBOUND) |
-
-
+All documents are CC0. The code is MIT.
 
 \---
 
