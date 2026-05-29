@@ -1,5 +1,4 @@
-# File: `emergent_gravity/README.md` (Updated)
-
+# File: `emergent_gravity/README.md` 
 
 # Emergent Gravity Hypothesis
 
