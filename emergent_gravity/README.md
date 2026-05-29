@@ -1,83 +1,133 @@
-# File: `emergent_gravity/README.md` 
+## File: `emergent_gravity/README.md`
 
-# Emergent Gravity Hypothesis
+```markdown
+# Emergent Gravity Suite
 
-**Does gravity emerge from collective freefall coherence?**
-
----
-
-## The Hypothesis
-
-Gravity may be partly emergent from coherent falling motion, not entirely fundamental.
-
-Standard gravity: `F = G × m1 × m2 / r²`
-
-Emergent gravity model: `F_eff = F × (1 + α × ρ_norm + β × Cf + γ × ρ_norm × Cf)`
-
-Where:
-- `ρ_norm` = normalized local density
-- `Cf` = coherence (0 = random, 1 = synchronized)
-- `α, β, γ` = amplification coefficients
-
-The critical prediction: Two systems with identical mass, density, and geometry — one static, one in coherent freefall — produce **different external gravitational fields**.
+**Author:** The Bridge Architect, with Morpheus (HuAi)  
+**License:** CC0 1.0 (Public Domain Dedication)  
+**Repository:** https://github.com/bigwiginfohub-wq/tba-publications
 
 ---
 
-## Documents in This Folder
+## Overview
+
+This folder contains the complete theoretical, simulation, and experimental framework for **emergent gravity** — the hypothesis that coherent freefall (Cf) amplifies gravity beyond Newtonian predictions.
+
+**Core question:** *Does coherent dynamical organization alter externally measurable gravity?*
+
+**Version 1 status:** Frozen model with fixed parameters (α=0.1, β=0.1, γ=0.05, ρ_critical=0.01). Predicted effects (8–50%) are likely too large and may be excluded by existing experiments. Version 2 will target 10⁻⁶–10⁻⁸ effects once coefficients are derived from physical principles.
+
+---
+
+## Core Documents
 
 | File | Description |
 |------|-------------|
-| `gravity_as_polarity.md` | N/S balance mechanism — planets concentrate pre-existing gravity |
+| `gravity_as_polarity.md` | N/S balance — planets concentrate pre-existing gravity |
 | `falling_as_core_of_time.md` | Time as falling; orbital time as echo |
 | `hidden_galaxies_method.md` | Identifying distant galaxies via Milky Way template |
-| `buraq_engineering_scientific.md` | Propulsion architecture for NASA/space institutions |
-| `buraq_engineering_theological.md` | Theological analysis for Islamic scholars |
+
+---
+
+## Simulation & Experimental Framework
+
+| File | Description |
+|------|-------------|
 | `simulation_framework.md` | S1A–S1F test design and mathematical model |
 | `call_for_simulators.md` | Invitation to run N-body simulations |
-| `cf_measurement_gap.md` | Why coherence (Cf) is not measured in current flight dynamics |
-| `cf_sensor_specification.md` | Technical blueprint for a Cf sensor |
-| `tabletop_cf_experiment.md` | Laboratory experiment to test Cf with rotating masses |
-| `code/` | Python scripts for REBOUND simulations |
-| `parameter_sweep_results.md` | Full 13,310-combination parameter sweep; amplification ranges, sensitivity analysis, experimental predictions |
+| `parameter_sweep_results.md` | Full 13,310-combination sweep; amplification ranges, sensitivity analysis |
+| `tabletop_cf_experiment.md` | Laboratory test with rotating masses (torsion balance) |
+| `cf_measurement_gap.md` | Why coherence is not measured in flight dynamics |
+| `cf_sensor_specification.md` | Blueprint for a Cf sensor |
+
+---
+
+## Engineering & Propulsion (Separate from Core Science)
+
+| File | Description |
+|------|-------------|
+| `buraq_engineering_scientific.md` | Propulsion architecture for NASA/space institutions |
+| `buraq_engineering_theological.md` | Theological analysis for Islamic scholars |
+
+**Note:** These documents are separate from the core scientific hypothesis to avoid conflating emergent gravity with propulsion claims.
+
+---
+
+## Critical Review & Canonical Model
+
+| File | Description |
+|------|-------------|
+| `external_review.md` | Constructive critique from an AI instance; strengths, weaknesses, recommendations |
+| `V1_canonical_model.md` | Frozen Version 1 model — fixed equations, parameters, normalization |
+| `conservation_and_equivalence.md` | Placeholder for energy/momentum conservation and equivalence principle |
+| `experimental_bounds.md` | Comparison of predictions against existing experiments (flywheels, Gravity Probe B, etc.) |
+
+---
+
+## Code
+
+| File | Description |
+|------|-------------|
+| `code/emergent_gravity.py` | Core amplification function |
+| `code/simulation.py` | REBOUND-based N-body simulation |
+| `code/test_S1F.py` | Critical test: static vs coherent freefall |
+| `code/parameter_sweep.py` | Python script for 13,310-combination sweep |
 | `code/emergent_gravity_parameter_sweep.csv` | Raw sweep data (13,310 rows) |
 | `code/amplification_vs_cf.png` | Plot of amplification vs coherence factor |
-| `code/parameter_sweep.py` | Python script that generated the sweep, CSV, and plot |
-
-All documents are CC0. The code is MIT.
 
 ---
 
-## The Six Tests
+## Key Results (Version 1)
 
-| Test | What It Measures |
-|------|------------------|
-| S1A | Dust vs Clump — compactness effect |
-| S1B | Parameter sweep — amplification mapping |
-| S1C | Minimal systems — pair and trio coherence |
-| S1D | Clubbed freefall — synchronized clusters |
-| S1E | Threshold detection — phase transitions |
-| S1F | External observer — critical test |
+| Condition | Cf | Amplification Ratio | Effect Size |
+|-----------|----|--------------------|-------------|
+| Static (random) | ~0.08 | 1.000× (baseline) | 0% |
+| Coherent freefall | ~0.93 | 1.153× | **+15.3%** |
 
-**S1F is the most important.** It directly compares static vs coherent systems with identical mass and density.
+**Null hypothesis (ratio = 1.000) is rejected** within the simulation. However, this magnitude (15%) is likely too large to be physically realistic. See `experimental_bounds.md` for discussion.
 
 ---
 
-## How to Run the Simulation
+## Current Limitations (Version 1)
 
-```bash
-cd code
-pip install rebound numpy matplotlib scipy
-python test_S1F.py
-```
+| Limitation | Status |
+|------------|--------|
+| ρ_critical is arbitrary | ❌ Needs physical derivation |
+| Predicted effects too large (8–50%) | ❌ Likely excluded by existing experiments |
+| Energy/momentum conservation | ❌ Not addressed |
+| Equivalence principle compatibility | ❌ Not addressed |
+| Cf lacks physical mechanism | ❌ Needs derivation (entropy/information) |
 
 ---
 
-## Contribute
+## Next Steps
 
-Run the simulations. Share your results. Help discover whether gravity emerges from falling together.
+| Priority | Action |
+|----------|--------|
+| 1 | Derive ρ_critical from geometry, information density, or entropy |
+| 2 | Reduce predicted effects to 10⁻⁶–10⁻⁸ |
+| 3 | Address conservation and equivalence principles |
+| 4 | Compare predictions against existing experimental bounds |
+| 5 | Release Version 2 |
 
-Open an issue or submit a pull request.
+---
+
+## How to Contribute
+
+- Run `test_S1F.py` and report results
+- Derive ρ_critical from first principles
+- Compare predictions against flywheel, torsion balance, and atom interferometer data
+- Propose a physical mechanism for Cf (entropy, information geometry)
+
+---
+
+## License
+
+All documents are CC0 1.0 (Public Domain Dedication). Code is MIT.
+
+---
+
+*The mirror does not change. You change by seeing yourself in it.*
 
 — The Bridge Architect, for HuAi
 ```
-
