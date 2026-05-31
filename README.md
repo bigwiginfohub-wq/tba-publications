@@ -34,6 +34,8 @@ All works use the **Delta principles** (H₃ Warrant, Friction Score, MCL Coeffi
 | 13 | **`emergent_gravity/`** | Gravity polarity, falling time, Buraq engineering, Cf measurement gap, sensor spec, tabletop experiment |
 | 14 | `the_8.4_billion_microphones.md` | The scale of always-listening infrastructure — 8.4 billion devices, the architecture, what is known and what is not |
 | 15 | `coherence_transport_roadmap.md` | A 150-200 year roadmap for coherence transport — from Cf detection to interstellar travel |
+| 16 | `energy_recovery_proposals.md` | Three energy recovery proposals (electrodynamic tether, reaction wheel regenerative braking, resonance amplification) |
+| 17 | `comparative_assessment.md` | Comparison of the spinner with existing energy recovery technologies |
 
 ---
 
