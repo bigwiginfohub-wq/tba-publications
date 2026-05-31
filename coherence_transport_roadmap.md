@@ -144,6 +144,18 @@ Coherence transport will take longer than aviation or rocketry — not because i
 
 \---
 
+## Spinner Dynamo Prototype (Immediate Next Step)
+
+| Phase | Milestone | Timeframe | Success Metric |
+|-------|-----------|-----------|----------------|
+| **0.1** | Build magnetic bearing test stand | 6 months | Rotor spins with no contact |
+| **0.2** | Design and machine 3-lobe rotor | 3 months | Balanced, low moment of inertia |
+| **0.3** | Simulate energy harvesting | 3 months | Python simulation shows feasibility |
+| **0.4** | Assemble prototype in vacuum chamber | 6 months | Pressure < 1e-3 Pa |
+| **0.5** | Measure Cf with torsion balance | 6–12 months | Detectable gravity anomaly |
+| **0.6** | Self-sustaining rotation | 12–18 months | > 1 hour without external power |
+
+See `spinner_dynamo_spec.md` for full details.
 
 
 \## The Boundary Statement
