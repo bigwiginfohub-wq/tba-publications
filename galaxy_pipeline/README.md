@@ -1,110 +1,60 @@
-
-
-\# Galaxy Pipeline
-
-
+# Galaxy Pipeline: Extragalactic Candidate Isolation
 
 A professional-grade pipeline for identifying uncataloged extragalactic sources (compact blue galaxies, star-forming dwarfs, AGN) using Gaia DR3 astrometry, Pan-STARRS photometry, and Legacy Survey imaging.
 
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
+## 🔍 Methodology
 
-\## Methodology
+The pipeline employs a multi-stage filtering process to isolate high-confidence candidates from raw Gaia data:
 
+1.  **Gaia Query**: Selects sources with low parallax, low proper motion, and high galaxy probability (`> 0.99`).
+2.  **Catalog Cross-Match**: Filters out known objects by cross-referencing SIMBAD, NED, and Legacy Survey catalogs.
+3.  **Morphological Scoring**: Calculates extendedness using Pan-STARRS PSF vs. Kron magnitudes (`Δ > 0.5`).
+4.  **Color Selection**: Identifies star-forming candidates via blue optical colors (`g - r < 0.5`).
+5.  **High-Energy Validation**: Checks for X-ray counterparts (ROSAT/Chandra) to rule out active AGN engines.
 
+##  Key Results
 
-1\. \*\*Gaia query\*\* — low parallax, low proper motion, galaxy-like colors, faint magnitude
+- **Validated Candidate**: Gaia DR3 4575090461821845760
+- **Classification**: Compact Blue Dwarf Galaxy (BCD) / Star-Forming Compact Galaxy
+- **Properties**:
+  - **Colors**: Blue continuum (`g - r = -0.17`)
+  - **Morphology**: Strongly extended (`PSF - Kron ≈ 1.2`)
+  - **Astrometry**: Zero proper motion, zero parallax
+  - **Catalog Status**: Uncataloged in SIMBAD, NED, and Legacy Survey DR10
 
-2\. \*\*Cross-match\*\* — exclude known objects (SIMBAD, NED, Legacy Survey)
+## 📂 Repository Structure
 
-3\. \*\*Extendedness\*\* — PSF vs Kron magnitudes in Pan-STARRS (Δ > 0.5)
-
-4\. \*\*Triangulation\*\* — combine all evidence into confidence score
-
-5\. \*\*Visual inspection\*\* — Legacy Survey cutouts
-
-
-
-\## Results
-
-
-
-\- \*\*Validated candidate\*\*: Gaia DR3 4575090461821845760
-
-\- \*\*Classification\*\*: Compact Blue Dwarf Galaxy / Star-Forming Compact Galaxy
-
-\- \*\*Properties\*\*: Blue (g-r = -0.17), extended (PSF-Kron ≈ 1.2), no proper motion, no parallax, galaxy probability = 1.0
-
-\- \*\*Status\*\*: Not in SIMBAD, NED, or Legacy Survey catalogs
-
-
-
-\## Files
-
-
-
-| File | Description |
-
+| Path | Description |
 |------|-------------|
+| `scripts/` | Pipeline code (`batch_pipeline_v3_1.py`), validation utilities |
+| `data/` | Input candidate lists & ranked output CSVs |
+| `reports/` | Methodology documentation & candidate reports |
+| `figures/` | Visualizations, cutouts, and sky maps |
 
-| `batch\_pipeline.py` | Main pipeline script |
+##  Usage
 
-| `pipeline\_methodology.md` | Full documentation |
+1.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-| `final\_candidate\_report.md` | Detailed candidate analysis |
+2.  **Run the pipeline:**
+    ```bash
+    python scripts/batch_pipeline_v3_1.py
+    ```
 
-| `batch\_ranked\_candidates.csv` | Prioritized candidate list |
+3.  **Review results:**
+    Check `data/batch_ranked_candidates.csv` for the prioritized list of targets.
 
-| `candidate\_map.png` | Sky map |
+##  Documentation
 
-| `legacy\_cutout.png` | Legacy Survey image |
+- **[Pipeline Methodology](reports/pipeline_methodology.md)**: Detailed scoring logic and selection function.
+- **[Candidate Report](reports/final_candidate_report.md)**: Deep-dive analysis of the primary validated target.
 
+## 📄 License
 
+This project is dedicated to the public domain under the **CC0 1.0 Universal** license. You can copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission.
 
-\## Requirements
-
-
-
-```bash
-
-pip install -r requirements.txt
-
-```
-
-
-
-\## Usage
-
-
-
-```bash
-
-python batch\_pipeline.py
-
-```
-
-
-
-\## License
-
-
-
-CC0 1.0 (Public Domain Dedication)
-
-
-
-\---
-
-
-
-\*The mirror does not change. You change by seeing yourself in it.\*
-
-```
-
-
-
-\---
-
-
-
-
-
+---
