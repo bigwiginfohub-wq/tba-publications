@@ -23,6 +23,12 @@ The pipeline employs a multi-stage filtering process to isolate high-confidence 
   - **Morphology**: Strongly extended (`PSF - Kron ≈ 1.2`)
   - **Astrometry**: Zero proper motion, zero parallax
   - **Catalog Status**: Uncataloged in SIMBAD, NED, and Legacy Survey DR10
+ 
+ ##  Key Results
+
+- **Confirmed Object:** Gaia DR3 4575090461821845760
+- **Classification:** Compact Galaxy ($z = 0.033$)
+- **Validation:** Identified by pipeline as T2 candidate; confirmed via DESI spectroscopy.   
 
 ## 📂 Repository Structure
 
