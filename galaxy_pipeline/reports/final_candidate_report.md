@@ -48,7 +48,11 @@ Dec = +28.446286°
 
 \- Chandra: None  
 
-
+## Spectroscopic Confirmation (DESI)
+- **Classification:** GALAXY
+- **Redshift:** z = 0.033
+- **Target ID:** 39628450197145219
+- **Status:** Confirmed extragalactic source.
 
 \## Classification
 
