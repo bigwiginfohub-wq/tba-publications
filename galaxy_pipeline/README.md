@@ -1,5 +1,8 @@
 # Galaxy Pipeline: Extragalactic Candidate Isolation & Survey Reconciliation
 
+> *"The universe is not a problem to be solved. It is a transmission to be received."* 
+> 📖 **[Read the Operator's Manifesto & Project Genesis](MANIFESTO.md)**
+
 A reproducible survey-reconciliation and candidate-isolation framework for identifying extragalactic candidates overlooked during initial catalog reconciliation, using Gaia DR3 astrometry, Pan-STARRS photometry, and Legacy Survey imaging.
 
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
@@ -29,6 +32,7 @@ The pipeline employs a multi-stage filtering process to isolate high-confidence 
 3.  **Morphological Scoring**: Calculates extendedness using Pan-STARRS PSF vs. Kron magnitudes (`Δ > 0.5`).
 4.  **Color Selection**: Identifies star-forming candidates via blue optical colors (`g - r < 0.5`).
 5.  **High-Energy Validation**: Checks for X-ray counterparts (ROSAT/Chandra) to mitigate contamination and identify/rule out active AGN engines.
+6.  
 
 ### 📊 Validation Funnel (Outcome A)
 
