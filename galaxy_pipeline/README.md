@@ -14,15 +14,17 @@ The pipeline employs a multi-stage filtering process to isolate high-confidence 
 4.  **Color Selection**: Identifies star-forming candidates via blue optical colors (`g - r < 0.5`).
 5.  **High-Energy Validation**: Checks for X-ray counterparts (ROSAT/Chandra) to mitigate contamination and identify/rule out active AGN engines.
 
-## 📊 Validation Summary
 
-| Pipeline Stage | Objects Remaining |
-| :--- | :--- |
-| Initial Gaia Selection | `[Insert Number]` |
-| Morphological Filter (PS1) | `[Insert Number]` |
-| Cross-Match Reconciliation | `[Insert Number]` |
-| Final Candidate Set | 37 |
-| Spectroscopically Confirmed | 1 |
+### 📊 Validation Summary
+
+| Pipeline Stage | Objects Remaining | Description |
+| :--- | :--- | :--- |
+| **Initial Candidate Pool** | ~500 | High-probability Gaia DR3 DSC CombMod galaxy candidates (`classprob_dsc_combmod_galaxy > 0.99`). |
+| **Astrometric & Catalog Pre-filtering** | 37 | Filtered for low parallax/PM significance and cross-matched against known catalogs to isolate overlooked sources (saved as `tight_candidates.csv`). |
+| **Batch Validation & Scoring** | 37 | Evaluated via Pan-STARRS PSF-Kron extendedness and optical colors; ranked by priority score (`batch_ranked_candidates.csv`). |
+| **High-Confidence Candidates (Tier 1 & 2)** | 24 | Passed strict morphological (`Δ > 0.5`) and color (`g-r < 0.5`) thresholds (1 T1 Strong, 23 T2 Probable). |
+| **Spectroscopically Confirmed** | 1 | Independently validated by DESI DR1 as an emission-line galaxy at `z = 0.033` (TargetID: `39628450197145219`). |
+
 
 ## 🏆 Key Results: Spectroscopic Confirmation
 
