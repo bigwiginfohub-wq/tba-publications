@@ -1,0 +1,31 @@
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# Databases, Checkpoints & Logs
+*.db
+*.pkl
+*.tmp
+*.log
+
+# Astronomical Data Formats (Keep these local)
+*.fits
+*.vot
+
+# Ignore ALL CSVs in the root folder (We only push the curated ones in /data/)
+/*.csv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS Files
+.DS_Store
+Thumbs.db
