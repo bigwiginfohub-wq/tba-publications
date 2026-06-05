@@ -1,0 +1,37 @@
+{
+  "pipeline_version": "crossmatch_audit_1k_pilot",
+  "timestamp_utc": "2026-06-03T16:05:38.883387+00:00",
+  "gaia_file": "gaia_phase1_scaled_1k.csv",
+  "test_rows": 1000,
+  "radius_arcsec": 1.0,
+  "matches": 16,
+  "match_rate": 0.016,
+  "cache_hit_rate": 0.0,
+  "low_confidence_matches": 0,
+  "status_distribution": {
+    "NoMatch": 984,
+    "Match": 16
+  },
+  "crossmatch_quality_distribution": {
+    "Excellent": 12,
+    "Good": 2,
+    "Review": 2
+  },
+  "tier_distribution": {
+    "Tier_0_Unknown": 984,
+    "Tier_1_Stellar_High": 9,
+    "Tier_1_Extragalactic_High": 4,
+    "Tier_3_Ambiguous_RS*": 1,
+    "Tier_3_Ambiguous_RG*": 1,
+    "Tier_3_Ambiguous_Em*": 1
+  },
+  "otype_distribution": {
+    "*": 6,
+    "G": 4,
+    "EB*": 2,
+    "RS*": 1,
+    "RG*": 1,
+    "Em*": 1,
+    "PM*": 1
+  }
+}

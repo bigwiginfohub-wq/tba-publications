@@ -1,0 +1,17 @@
+{
+  "pipeline_version": "crossmatch_audit_final_candidates",
+  "timestamp_utc": "2026-06-03T16:55:46.504218+00:00",
+  "gaia_file": "gaia_phase1_final_candidates.csv",
+  "test_rows": 21,
+  "matches": 4,
+  "match_rate": 0.19047619047619047,
+  "cache_hit_rate": 1.0,
+  "tier_distribution": {
+    "Tier_0_Unknown": 17,
+    "Tier_1_Extragalactic_High": 4
+  },
+  "otype_distribution": {
+    "QSO": 3,
+    "Sy1": 1
+  }
+}
