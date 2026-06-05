@@ -1,7 +1,17 @@
-astroquery>=0.4.11
+# Core Scientific & Astronomical Stack
 astropy>=7.2.0
+astroquery>=0.4.11
+numpy>=2.4.6
 pandas>=3.0.3
-matplotlib>=3.10.9
 scipy>=1.17.1
 scikit-learn>=1.8.0
-numpy>=2.4.6
+
+# Visualization & Statistical Modeling
+matplotlib>=3.10.9
+statsmodels>=0.14.0
+
+# API & Web Requests (For Legacy Survey / WISE fallbacks)
+requests>=2.31.0
+
+# Optional: Native HEALPix mapping (Pipeline includes a math-based fallback if missing)
+# healpy>=1.16.0 
