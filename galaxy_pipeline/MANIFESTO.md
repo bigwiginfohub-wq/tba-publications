@@ -1,4 +1,4 @@
-# TRACEBIND: Survey Reconciliation, Candidate Isolation, and Kinematic Mapping Framework
+# TRACEBIND: Survey Reconciliation, Kinematic Mapping, and Astrometric Anomaly Ranking
 
 ### Developed by The Bridge Architect
 
@@ -50,11 +50,7 @@ These results demonstrate the pipeline's ability to recover physically meaningfu
 
 TRACEBIND was later extended to study large-scale proper-motion structure within Gaia data.
 
-This work introduced the directional coherence statistic:
-
-Cf
-
-which was subsequently shown to be analytically equivalent to the Mean Resultant Length (R), a standard quantity in directional statistics.
+This work introduced the directional coherence statistic ($C_f$), which was subsequently shown to be analytically equivalent to the Mean Resultant Length ($R$), a standard quantity in directional statistics.
 
 The significance of this result is not the invention of a new mathematical object. Rather, it establishes a bridge between astronomical proper-motion analysis and established directional-statistics theory.
 
@@ -75,6 +71,21 @@ TRACEBIND therefore provides a quantitative framework for identifying and studyi
 
 ---
 
+## Pillar III: Astrometric Anomaly Ranking
+
+The most recent evolution of TRACEBIND focuses on identifying stars whose astrometric behavior is inconsistent with a single-star model. 
+
+By engineering a composite `tension_score` from Gaia DR3 astrometric noise flags (RUWE and Astrometric Excess Noise), the framework ranks targets for unresolved companions (giant planets, brown dwarfs, compact objects). Instead of treating noise flags as binary vetoes, TRACEBIND uses logarithmic compression to capture the heavy-tail of astrometric model failures.
+
+Validated against the Gaia DR3 Non-Single Star (NSS) catalogs, the tension score:
+
+* Significantly enriches for NSS solutions (Odds Ratio = 6.12, $p = 9.44 \times 10^{-6}$).
+* Retains independent predictive power beyond raw RUWE and excess noise (Logistic Regression Pseudo-R² increases from 0.16 to 0.31).
+
+This establishes TRACEBIND as a systematic anomaly prioritization system for the local solar neighborhood.
+
+---
+
 ## What TRACEBIND Has Demonstrated
 
 Current evidence supports the following conclusions:
@@ -82,25 +93,31 @@ Current evidence supports the following conclusions:
 ### Established
 
 * Reproducible multi-survey reconciliation can recover externally validated astrophysical targets.
-* The Cf statistic is analytically equivalent to the Mean Resultant Length.
+* The $C_f$ statistic is analytically equivalent to the Mean Resultant Length.
 * Gaia proper-motion fields contain statistically significant directional coherence.
 * Residual coherence persists after first-order Galactic-background subtraction.
+* The composite astrometric tension metric significantly enriches for Gaia DR3 Non-Single Star solutions and provides independent predictive value.
 
 ### Not Established
 
 TRACEBIND does not currently demonstrate:
 
-* Discovery of new stellar streams.
-* Discovery of new moving groups.
-* Evidence for or against dark matter.
-* Evidence for or against MOND or alternative gravity theories.
+* Discovery of new stellar streams or moving groups.
+* Definitive discovery of specific exoplanets, brown dwarfs, or companion masses based solely on astrometric tension.
+* Evidence for or against dark matter, MOND, or alternative gravity theories.
 * Identification of previously unknown Galactic substructures.
 
-Such claims require additional phase-space analysis, radial velocities, and independent validation.
+Such claims require additional phase-space analysis, radial velocities, Proper Motion Anomaly (PMa) calculations, and independent validation.
 
 ---
 
-## Philosophy
+## The Philosophy of Anomaly Prioritization
+
+TRACEBIND does not attempt to replace physical models. It ranks where those models appear strained. 
+
+Modern astronomy generates catalogs of unprecedented scale, but every catalog is built on assumptions: that a source is a single star, that a point of light is a galaxy, that a proper motion vector is linear. When the data violates those assumptions, the catalog description breaks down.
+
+A high TRACEBIND score is not evidence of a planet, a binary, a stellar stream, or an AGN. It is evidence that the catalog description and the observed data deserve closer examination. By systematically identifying and ranking these points of astrometric and photometric tension, TRACEBIND provides a rigorous, reproducible framework for prioritizing targets for spectroscopic and high-resolution imaging follow-up.
 
 Scientific progress often begins not with answers, but with careful observation.
 
