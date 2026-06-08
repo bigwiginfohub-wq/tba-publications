@@ -20,6 +20,7 @@ def query_astrometric_tension_features():
         astrometric_excess_noise,
         visibility_periods_used,
         phot_g_mean_mag,
+        bp_rp,
         phot_bp_mean_mag,
         phot_rp_mean_mag,
         phot_bp_rp_excess_factor,
