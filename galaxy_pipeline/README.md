@@ -1,5 +1,5 @@
 
-# TRACEBIND: Multi-Survey Reconciliation, Kinematic Mapping & Astrometric Anomaly Ranking
+# TRACEBIND: Multi-Survey Reconciliation, Kinematic Mapping & Companion Candidate Prioritization
 
 A reproducible survey-reconciliation, candidate-isolation, kinematic-mapping, and anomaly-prioritization framework. This repository contains pipelines for identifying overlooked extragalactic candidates in Gaia DR3, quantifying spatial patterns of directional coherence in the Milky Way, and ranking astrometric model failures to isolate unresolved stellar companions.
 
@@ -13,10 +13,16 @@ A reproducible survey-reconciliation, candidate-isolation, kinematic-mapping, an
 
 This project is divided into three primary research pillars:
 
-### Pillar 1: Astrometric Anomaly Ranking (Phase 11)
-TRACEBIND's composite astrometric tension metric significantly enriches for Gaia DR3 Non-Single Star (NSS) solutions. Stars in the highest-scoring percentile are approximately six times more likely to belong to Gaia NSS catalogs than baseline stars, and the metric retains independent predictive power beyond RUWE and astrometric excess noise.
-* **Validation:** Fisher Exact Test yields an Odds Ratio of 6.12 ($p = 9.44 \times 10^{-6}$) for the top 50 tension targets.
-* **Independent Predictive Value:** Logistic regression demonstrates that adding the tension score to a model containing RUWE and Excess Noise nearly doubles the explanatory power (Pseudo-R² increases from 0.1667 to 0.3169).
+### Pillar 1: Astrometric Anomaly Ranking & Companion Discovery (Phase 11–12)
+TRACEBIND combines astrometric and astrophysical features to identify stars whose observed behavior is inconsistent with a single-star model.
+
+* **NSS Enrichment:** High-tension stars are significantly enriched in Gaia DR3 Non-Single Star (NSS) solutions relative to baseline populations.
+* **Machine Learning Validation:** A combined astrometric + astrophysical model achieves **ROC-AUC = 0.9522 ± 0.0026**, demonstrating near-perfect discrimination between NSS and non-NSS systems.
+* **Leakage Audit:** Independent-feature testing confirms that both astrometric and astrophysical feature groups contribute unique predictive information.
+* **Physical-Origin Investigation:** Follow-up crossmatches indicate that elevated tension is not primarily explained by ultraviolet activity or cataloged optical variability.
+* **Multiplicity Enrichment:** TRACEBIND candidates show significant enrichment in known visual and spectroscopic binaries (WDS/SB9), supporting unresolved multiplicity as a major physical origin of astrometric tension.
+
+Current evidence suggests TRACEBIND is identifying a mixed population of unresolved stellar companions, hierarchical systems, and currently unsolved Gaia astrometric anomalies.
 
 ### Pillar 2: Extragalactic Candidate Isolation (Phases 1-7)
 A multi-stage filtering pipeline designed to isolate high-confidence extragalactic candidates overlooked during initial catalog reconciliation.
@@ -31,25 +37,37 @@ An application of directional statistics to quantify localized kinematic coheren
 
 ---
 
-## 🔍 Methodology Overviews
+## 🔬 Phase 12: Physical-Origin Investigation
 
-### Pillar 1: Astrometric Tension & NSS Enrichment
-Instead of treating Gaia's astrometric noise flags as binary vetoes, TRACEBIND engineers a continuous `tension_score` using logarithmic compression of `RUWE` and `Astrometric Excess Noise`. This composite metric is validated against the Gaia DR3 Non-Single Star (NSS) catalogs to systematically rank stars whose astrometric behavior is inconsistent with a single-star model, prioritizing them for spectroscopic or direct-imaging follow-up.
+TRACEBIND was designed to identify catalog-model tension, not to assume a physical explanation. Phase 12 therefore tests competing hypotheses for the origin of high-tension systems.
 
-### Pillar 2: Extragalactic Filtering Funnel
-1. **Gaia Query**: Selects sources with low parallax/proper motion significance and high galaxy probability (`> 0.99` via Gaia DR3 DSC CombMod).
-2. **Catalog Cross-Match**: Filters out known objects via SIMBAD, NED, and Legacy Survey.
-3. **Morphological Scoring**: Calculates extendedness using Pan-STARRS PSF vs. Kron magnitudes (`Δ > 0.5`).
-4. **Color Selection**: Identifies star-forming candidates via blue optical colors (`g - r < 0.5`).
-5. **High-Energy Validation**: Checks for X-ray/IR counterparts (ROSAT/WISE) to mitigate contamination and identify AGN engines.
+### Activity Hypothesis
+Pilot crossmatches against ultraviolet and optical-variability catalogs were performed using matched-control samples.
 
-### Pillar 3: Kinematic Coherence & Background Subtraction
-To test whether coherence remains after subtraction of large-scale Galactic motions, we subtracted the Oort differential rotation and Solar reflex motion (Schönrich et al. 2010). 
+**Results:**
+* GALEX NUV detection fraction: no significant enrichment relative to controls.
+* UV-excess analysis (NUV − G): no statistically significant enhancement.
+* TIC cataloged-variable fraction: no significant enrichment.
 
-| Metric         | Observed | Null Mean | p-value |
-| -------------- | -------- | --------- | ------- |
-| Mean Coherence | 0.309    | 0.234     | <0.001  |
-| Top-5 Mean     | 0.393    | 0.320     | 0.005   |
+These results do not support stellar activity as the dominant explanation for the TRACEBIND population.
+
+### Multiplicity Hypothesis
+Crossmatches against the Washington Double Star (WDS) catalog and the Ninth Catalogue of Spectroscopic Binary Orbits (SB9) reveal:
+
+* **TRACEBIND Targets:** 70.0% present in WDS/SB9
+* **Matched Controls:** 36.7% present in WDS/SB9
+* **Fisher Exact Test:** p = 9.55 × 10⁻³ (Odds Ratio ≈ 4.03)
+
+This provides direct evidence that astrometric tension is strongly associated with unresolved multiplicity.
+
+### Current Interpretation
+The highest-priority TRACEBIND candidates likely represent a mixed population consisting of:
+* unresolved binaries
+* hierarchical multiple systems
+* brown-dwarf companions
+* long-period companions not formally solved in Gaia DR3
+
+Future Gaia releases provide a natural blind-validation test of these predictions via the sealed DR4 Time Capsule.
 
 ---
 
@@ -60,23 +78,24 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 * **Astrometric Anomalies:** A high tension score is evidence that the catalog description and the observed data deserve closer examination. It is *not* definitive proof of an exoplanet, brown dwarf, or specific companion mass.
 * **Kinematic Coherence:** $C_f$ measures directional alignment, not physical association. Significant coherence does not by itself establish membership in stellar streams, nor does it provide evidence for or against Dark Matter, MOND, or Emergent Gravity.
 * **Extragalactic Candidates:** Mid-infrared excesses are strongly consistent with AGN activity, but require spectroscopic follow-up for definitive classification.
-* **Pending Work:** Cross-matching high-$C_f$ patches against modern 6D phase-space catalogs, and calculating Proper Motion Anomalies (PMa) via the Hipparcos-Gaia Catalog of Accelerations (HGCA) for Phase 11 targets.
 
 ---
 
 ## 📂 Repository Structure
 
 ```text
-├── data/                       # Datasets, catalogs, and null distributions
-├── figures/                    # Plots, cutouts, enrichment curves, and sky maps
+├── data/                       # Datasets, Master Catalog, and DR4 Time Capsule
+├── figures/                    # Plots, enrichment curves, HR diagrams, and sky maps
 ├── reports/                    # Methodology, prospectuses, and candidate logs
 ├── scripts/
 │   ├── phase1_7_agn/           # Extragalactic hunting, PS1, WISE, Crossmatching
 │   ├── phase8_9_kinematics/    # Milky Way coherence, Outliers, 3D mapping
 │   ├── phaseC_D_statistics/    # Monte Carlo, Permutations, Residuals
-│   └── phase11_astrometry/     # Astrometric tension, NSS enrichment, PMa validation
+│   ├── phase11_astrometry/     # Astrometric tension, NSS enrichment, ML validation
+│   └── phase12_physical_origin/# GALEX, TIC, WDS/SB9 multiplicity crossmatches
 ├── PAPER_PROSPECTUS.md         # Prospectus for the directional-statistics methodology paper
 ├── PHASE_11_PROSPECTUS.md      # Prospectus for the astrometric anomaly ranking framework
+├── TRACEBIND_METHODS.md        # Frozen metrics (v1.0) and validation standards
 ├── requirements.txt            # Python dependencies
 ```
 
@@ -89,10 +108,9 @@ In accordance with rigorous peer-review standards, this repository explicitly de
    pip install -r requirements.txt
    ```
 
-2. **Run the Astrometric Anomaly Ranking (Phase 11):**
+2. **Run the Master Pipeline (Astrometric Anomaly Ranking):**
    ```bash
-   python scripts/phase11_astrometry/stage_ab_gaia_query.py
-   python scripts/phase11_astrometry/phase11a_nss_enrichment_v2.py
+   python tracebind_pipeline.py
    ```
 
 3. **Run the Kinematic Coherence & Permutation Tests:**
@@ -108,11 +126,21 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 
 ---
 
-## 📜 Project Philosophy: Anomaly Prioritization
+## 📜 Project Philosophy: Discovery Through Model Failure
 
-TRACEBIND does not attempt to replace physical models. It ranks where those models appear strained. 
+TRACEBIND is built on a simple principle:
 
-Modern astronomy generates catalogs of unprecedented scale, but every catalog is built on assumptions: that a source is a single star, that a point of light is a galaxy, that a proper motion vector is linear. When the data violates those assumptions, the catalog description breaks down. A high TRACEBIND score is not evidence of a planet, a binary, a stellar stream, or an AGN. It is evidence that the catalog description and the observed data deserve closer examination.
+> Scientific discovery often begins where a successful model starts to fail.
+
+Astronomical catalogs are built from assumptions: that a source is a single star, that a proper motion is linear, that a point source is adequately described by a particular model. Most of the time these assumptions work remarkably well.
+
+Sometimes they do not.
+
+TRACEBIND does not attempt to replace those models. Instead, it systematically measures where observed data and catalog descriptions diverge. Those divergences are ranked, validated, and stress-tested against independent datasets.
+
+The goal is not anomaly detection for its own sake. The goal is to identify astrophysical populations that existing catalog frameworks only partially describe.
+
+In this sense, TRACEBIND functions as a discovery engine for catalog-model tension: a reproducible framework for turning model failures into scientifically testable hypotheses.
 
 > *"The universe is not a problem to be solved. It is a transmission to be received."* 
 > 📖 **[Read the Full Operator's Manifesto & Project Genesis](reports/MANIFESTO.md)**
@@ -125,9 +153,5 @@ This project is dedicated to the public domain under the **CC0 1.0 Universal** l
 
 **No Copyright**
 The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
-
-**Other Information**
-* In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.
-* Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.
-* When using or citing the work, you should not imply endorsement by the author or the affirmer.
 ```
+
