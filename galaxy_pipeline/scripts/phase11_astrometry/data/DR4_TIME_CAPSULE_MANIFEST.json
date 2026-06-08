@@ -1,0 +1,13 @@
+{
+    "project": "TRACEBIND",
+    "capsule_name": "DR4 NSS Prediction Time Capsule",
+    "date_sealed": "2026-06-08T00:07:59.389955Z",
+    "catalog_file": "data/tracebind_followup_top100_refined.csv",
+    "sha256_hash": "62c11e2dbe9b76dcae3d0d65c0bcc1e2bd59bc96820a9396e4090f60e8d2d071",
+    "total_targets": 100,
+    "mean_followup_score": 0.8602337027621636,
+    "min_followup_score": 0.8281531591480329,
+    "max_followup_score": 0.9147948918047388,
+    "scientific_purpose": "This catalog contains the Top 100 'Unexplained' high-tension stars identified by TRACEBIND v1.0. These stars are currently NOT in the Gaia DR3 NSS catalog, but are ranked by their mathematical similarity to known NSS systems. This capsule is sealed prior to Gaia DR4 release to serve as a blind, prospective prediction test of the TRACEBIND framework.",
+    "status": "SEALED"
+}
