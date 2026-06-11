@@ -62,7 +62,7 @@ A professional-grade pipeline for identifying uncataloged extragalactic sources 
 
 ---
 
-## Quantum Cf (New)
+## Quantum Cf 
 
 Testing the Coherence Factor (Cf) on IBM's free quantum processors (Heron r2 `ibm_kingston`, 156 qubits). This experiment maps the 3-lobe spinner onto a qubit cluster state to measure latent space curvature.
 
@@ -79,7 +79,7 @@ Testing the Coherence Factor (Cf) on IBM's free quantum processors (Heron r2 `ib
 
 ---
 
-## Medical Cf (New)
+## Medical Cf 
 
 Applying the Coherence Factor (Cf) to human physiology. Cf measures the degree to which the heart's rhythm is aligned with the body's optimal resonant frequency (0.10 Hz).
 
@@ -96,7 +96,7 @@ Applying the Coherence Factor (Cf) to human physiology. Cf measures the degree t
 
 ---
 
-## Delta Principles (Weighted)
+## Delta Principles 
 
 | Weight | Principle | Question |
 |--------|-----------|----------|
