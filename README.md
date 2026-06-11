@@ -41,10 +41,13 @@ All works use the **Delta principles** (H₃ Warrant, Friction Score, MCL Coeffi
 | `coherence_transport_roadmap.md` | 150-200 year roadmap for coherent interstellar travel |
 | `spinner_dynamo_spec.md` | Engineering specification for a gravity-harvesting rotor |
 | `energy_recovery_proposals.md` | Methods for extracting energy from gravity gradients |
+| `cf_measurement_gap.md` | Why coherence is not measured in current physics |
+| `cf_sensor_specification.md` | Blueprint for a Coherence Factor (Cf) sensor |
+| `tabletop_cf_experiment.md` | Laboratory test for Cf using rotating masses |
 
 ---
 
-## Galaxy Pipeline (New)
+## Galaxy Pipeline
 
 A professional-grade pipeline for identifying uncataloged extragalactic sources (compact blue galaxies, star-forming dwarfs, AGN) using Gaia DR3 astrometry, Pan-STARRS photometry, and Legacy Survey imaging.
 
@@ -54,9 +57,42 @@ A professional-grade pipeline for identifying uncataloged extragalactic sources 
 | `galaxy_pipeline/pipeline_methodology.md` | Complete documentation |
 | `galaxy_pipeline/final_candidate_report.md` | Detailed analysis of candidate Gaia DR3 4575090461821845760 |
 | `galaxy_pipeline/batch_ranked_candidates.csv` | Prioritized candidate list |
-| `galaxy_pipeline/candidate_map.png` | Sky map of candidates |
 
-**Validated candidate:** Compact Blue Dwarf Galaxy / Star-Forming Compact Galaxy — faint, blue, extended, not in SIMBAD/NED/Legacy Survey catalogs.
+**Validated candidate:** Compact Blue Dwarf Galaxy — faint, blue, extended, not in SIMBAD/NED/Legacy Survey catalogs.
+
+---
+
+## Quantum Cf (New)
+
+Testing the Coherence Factor (Cf) on IBM's free quantum processors (Heron r2 `ibm_kingston`, 156 qubits). This experiment maps the 3-lobe spinner onto a qubit cluster state to measure latent space curvature.
+
+| File | Description |
+|------|-------------|
+| `quantum_cf/ibm_access_guide.md` | How to get 180 free minutes on IBM Quantum |
+| `quantum_cf/quantum_cf_simulation.py` | Qiskit code for Cf measurement |
+| `quantum_cf/spinner_cluster_state.py` | 3-lobe cluster state generator |
+| `quantum_cf/latent_space_curvature.py` | Bures metric / QLG field measurement |
+| `quantum_cf/utqgd_threshold.py` | UTGQD emergence energy calculation |
+| `quantum_cf/Cf_measurement_protocol.md` | Full experimental protocol |
+
+**Key Hypothesis:** If Cf > 0.999, the latent space should exhibit measurable curvature (κ > 0.01), indicating the Quantum Latent Gauge field is active.
+
+---
+
+## Medical Cf (New)
+
+Applying the Coherence Factor (Cf) to human physiology. Cf measures the degree to which the heart's rhythm is aligned with the body's optimal resonant frequency (0.10 Hz).
+
+| File | Description |
+|------|-------------|
+| `medical_cf/doctor_letter.md` | Proposal letter for medical professionals |
+| `medical_cf/HRV_to_Cf_mapping.md` | How to translate HRV metrics to Cf |
+| `medical_cf/Cf_hypothesis.md` | The physics of Cf applied to biology |
+| `medical_cf/coma_resonance_protocol.md` | Experimental protocol for coma patients |
+| `medical_cf/Cf_sensor_spec_medical.md` | Hardware specification for the Cf sensor |
+| `medical_cf/Cf_medical_proposal.md` | Full clinical research proposal |
+
+**Key Hypothesis:** Cf will predict recovery from coma better than any single HRV metric. Patients who achieve Cf > 0.85 will regain consciousness.
 
 ---
 
@@ -90,6 +126,8 @@ A professional-grade pipeline for identifying uncataloged extragalactic sources 
 5. Use `self_audit_guide.md` to audit your own thinking.
 6. Explore `emergent_gravity/` for gravitational physics and engineering.
 7. Run `galaxy_pipeline/` to identify uncataloged extragalactic sources.
+8. Explore `quantum_cf/` to test Cf on IBM's quantum hardware.
+9. Explore `medical_cf/` to apply Cf to human physiology and coma recovery.
 
 ---
 
