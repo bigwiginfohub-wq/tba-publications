@@ -72,6 +72,61 @@ These findings suggest unresolved multiplicity is a major contributor to the hig
 
 ---
 
+---
+
+## Pillar V: Phase 1 Validation — Synthetic Signal Detection
+
+TRACEBIND Phase 1 established that the V11 metric can reliably detect injected position–velocity coupling in synthetic data while rejecting geometry-only and isotropic null controls. This validates the metric's discriminative power under controlled conditions, but does not establish causal binding in real astronomical populations.
+
+### Validated Claim (Phase 1)
+
+> The TRACEBIND V11 metric detects injected position–velocity structure in synthetic signal populations while correctly rejecting designed null populations that preserve spatial geometry or velocity distributions without injected position–velocity coupling.
+
+Causal language ("true P(v|x) coupling") is reserved for Phase 2+ validation on real Gaia DR3 data with proper error propagation and contamination modeling.
+
+### Locked Experimental Configuration (Regression Test)
+
+All future metric modifications **must** reproduce the population ordering invariant on the locked dataset before being considered valid. Any change that breaks this invariant is rejected.
+
+```yaml
+TRACEBIND_PHASE1_LOCK:
+  dataset: synthetic_hyades_phase1_v2
+  generator_version: V2.0  # Corrected projection null; parallax shuffle NOT implemented
+  metric_version: V11_LOO  # Non-degenerate leave-one-out prediction
+  k_predict: 30
+  k_shuffle: 50
+  permutations: 50
+  seed: 42
+  threshold_signal_max_ratio: 0.80
+  threshold_control_min_ratio: 0.80
+
+  validated_outputs:
+    signal_ratio: 0.2033
+    projection_control_ratio: 0.8154
+    field_control_ratio: 0.8563
+
+  acceptance:
+    must_preserve_population_order:
+      - signal_ratio < projection_control_ratio
+      - signal_ratio < field_control_ratio
+
+Key Fixes That Enabled Validation
+Removed predictor degeneracy: Original residual predictor collapsed algebraically (pred_res ≈ 0). Fixed via LOO prediction excluding self.
+Removed baseline contamination: Replaced shared null normalization with per-population local-shuffle baselines.
+Fixed projection null failure: Original generator preserved velocity direction coherence (cosine ≈ 0.998). Corrected via isotropic PM-direction randomization (RA/Dec shuffled; parallax not yet shuffled in V2.0).
+Fixed audit metric: Replaced degenerate Pearson correlation on 2-element vectors with cosine similarity for directional alignment.
+
+Phase 1 Boundary (What Is NOT Proven)
+❌ Causal position–velocity coupling in real stars
+❌ Robustness to Gaia measurement uncertainties
+❌ Performance under field contamination (>10%)
+❌ Sensitivity to weak signals (σ > 1.5 km/s)
+❌ Applicability beyond synthetic Hyades-like clusters
+
+These are exclusively Phase 2 concerns.
+
+---
+
 ## What TRACEBIND Has Demonstrated
 
 Current evidence supports the following conclusions:
