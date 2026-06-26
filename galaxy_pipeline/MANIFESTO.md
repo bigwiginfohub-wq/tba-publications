@@ -152,6 +152,13 @@ This does NOT establish robustness to full Gaia DR3 systematics (covariance, sca
 
 All Phase 2 results are reproducible via `phase2_signal_sweep.py`, `phase2_robustness_audit.py`, `phase2_statistical_margin.py`, and `phase2d_measurement_noise.py` with seed=42 and parameters as documented in each script header.
 
+### Formal Separation Criterion
+
+Distributional separation between signal and control populations is defined as:
+
+$$Q_{97.5}(R_{\text{signal}}) < Q_{2.5}(R_{\text{control}})$$
+
+where $R = E_{\text{real}} / E_{\text{null},i}$ is the prediction-error ratio distribution computed over $N_{\text{perm}}$ local-shuffle null realizations, and $Q_p$ denotes the $p$-th percentile. This criterion requires complete non-overlap of the central 95% null-ratio intervals and is applied identically across all validation phases.
 ---
 
 ## What TRACEBIND Has Demonstrated
