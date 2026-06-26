@@ -256,6 +256,18 @@ Such claims require additional phase-space analysis, radial velocities, Proper M
 
 ---
 
+### What TRACEBIND Measures
+
+TRACEBIND quantifies **local kinematic coherence**: the degree to which 
+spatial proximity predicts velocity similarity beyond what is expected 
+from local density and velocity dispersion alone.
+
+This is distinct from gravitational binding. Bound clusters are always 
+coherent, but coherent populations are not necessarily bound (e.g., 
+dissolving associations, tidal streams). TRACEBIND is a detector of 
+shared phase-space structure; dynamical interpretation requires 
+supplementary evidence.
+
 ## The Philosophy of Anomaly Prioritization
 
 TRACEBIND does not attempt to replace astrophysical theory.
