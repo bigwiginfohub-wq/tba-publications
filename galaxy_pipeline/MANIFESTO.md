@@ -1,3 +1,4 @@
+
 # TRACEBIND: Survey Reconciliation, Kinematic Mapping, and Astrometric Anomaly Attribution
 
 ### Developed by The Bridge Architect
@@ -16,9 +17,9 @@ Its purpose is not to replace existing catalogs, nor to compete with large insti
 
 The philosophy is straightforward:
 
-* Reconcile before interpreting.
-* Validate before claiming.
-* Measure before explaining.
+-   Reconcile before interpreting.
+-   Validate before claiming.
+-   Measure before explaining.
 
 ---
 
@@ -44,7 +45,7 @@ Analyses indicate that Gaia proper-motion fields exhibit coherence significantly
 
 ## Pillar III: Astrometric Anomaly Ranking
 
-The evolution of TRACEBIND into the local solar neighborhood focuses on identifying stars whose astrometric behavior is inconsistent with a single-star model. 
+The evolution of TRACEBIND into the local solar neighborhood focuses on identifying stars whose astrometric behavior is inconsistent with a single-star model.
 
 By engineering a composite `tension_score` from Gaia DR3 astrometric noise flags (RUWE and Astrometric Excess Noise), the framework ranks targets for unresolved companions. Instead of treating noise flags as binary vetoes, TRACEBIND uses logarithmic compression to capture the heavy-tail of astrometric model failures.
 
@@ -59,18 +60,16 @@ Astrometric anomalies can arise from multiple physical mechanisms, including unr
 TRACEBIND Phase 12 extends anomaly ranking into hypothesis testing by comparing high-tension stars against matched control populations. The objective is not merely to identify anomalies, but to determine which physical mechanisms most plausibly generate them.
 
 Current investigations include:
-* GALEX ultraviolet activity diagnostics
-* TESS photometric variability indicators
-* Known multiplicity catalogs (WDS, SB9)
+-   GALEX ultraviolet activity diagnostics
+-   TESS photometric variability indicators
+-   Known multiplicity catalogs (WDS, SB9)
 
 Initial results indicate:
-* No statistically significant enhancement in UV activity relative to matched controls.
-* No enrichment in cataloged optical variability flags.
-* Significant enrichment in known binary systems (Odds Ratio ≈ 4.03, p = 0.0095).
+-   No statistically significant enhancement in UV activity relative to matched controls.
+-   No enrichment in cataloged optical variability flags.
+-   Significant enrichment in known binary systems (Odds Ratio ≈ 4.03, p = 0.0095).
 
 These findings suggest unresolved multiplicity is a major contributor to the highest TRACEBIND astrometric tensions. Further validation remains ongoing.
-
----
 
 ---
 
@@ -82,7 +81,7 @@ TRACEBIND Phase 1 established that the V11 metric can reliably detect injected p
 
 > The TRACEBIND V11 metric detects injected position–velocity structure in synthetic signal populations while correctly rejecting designed null populations that preserve spatial geometry or velocity distributions without injected position–velocity coupling.
 
-Causal language ("true P(v|x) coupling") is reserved for Phase 2+ validation on real Gaia DR3 data with proper error propagation and contamination modeling.
+Causal language ("true P(v|x) coupling") is reserved for real-data validation with proper error propagation and contamination modeling.
 
 ### Locked Experimental Configuration (Regression Test)
 
@@ -91,7 +90,7 @@ All future metric modifications **must** reproduce the population ordering invar
 ```yaml
 TRACEBIND_PHASE1_LOCK:
   dataset: synthetic_hyades_phase1_v2
-  generator_version: V2.0  # Corrected projection null; parallax shuffle NOT implemented
+  generator_version: V2.0  # Corrected projection null; parallax NOT shuffled
   metric_version: V11_LOO  # Non-degenerate leave-one-out prediction
   k_predict: 30
   k_shuffle: 50
@@ -109,23 +108,24 @@ TRACEBIND_PHASE1_LOCK:
     must_preserve_population_order:
       - signal_ratio < projection_control_ratio
       - signal_ratio < field_control_ratio
+```
 
-Key Fixes That Enabled Validation
-Removed predictor degeneracy: Original residual predictor collapsed algebraically (pred_res ≈ 0). Fixed via LOO prediction excluding self.
-Removed baseline contamination: Replaced shared null normalization with per-population local-shuffle baselines.
-Fixed projection null failure: Original generator preserved velocity direction coherence (cosine ≈ 0.998). Corrected via isotropic PM-direction randomization (RA/Dec shuffled; parallax not yet shuffled in V2.0).
-Fixed audit metric: Replaced degenerate Pearson correlation on 2-element vectors with cosine similarity for directional alignment.
+### Key Fixes That Enabled Validation
 
-Phase 1 Boundary (What Is NOT Proven)
-❌ Causal position–velocity coupling in real stars
-❌ Robustness to Gaia measurement uncertainties
-❌ Performance under field contamination (>10%)
-❌ Sensitivity to weak signals (σ > 1.5 km/s)
-❌ Applicability beyond synthetic Hyades-like clusters
+-   **Removed predictor degeneracy:** Original residual predictor collapsed algebraically (`pred_res ≈ 0`). Fixed via LOO prediction excluding self.
+-   **Removed baseline contamination:** Replaced shared null normalization with per-population local-shuffle baselines.
+-   **Fixed projection null failure:** Original generator preserved velocity direction coherence (cosine ≈ 0.998). Corrected via isotropic PM-direction randomization (RA/Dec shuffled; parallax not shuffled in V2.0).
+-   **Fixed audit metric:** Replaced degenerate Pearson correlation on 2-element vectors with cosine similarity for directional alignment.
 
-These are exclusively Phase 2 concerns.
+### Phase 1 Boundary (What Is NOT Proven)
 
----
+-   ❌ Causal position–velocity coupling in real stars
+-   ❌ Robustness to Gaia measurement uncertainties
+-   ❌ Performance under field contamination (>10%)
+-   ❌ Sensitivity to weak signals (σ > 1.5 km/s)
+-   ❌ Applicability beyond synthetic Hyades-like clusters
+
+These are exclusively Phase 2+ concerns.
 
 ---
 
@@ -135,22 +135,18 @@ TRACEBIND Phase 2 established the operational boundaries of the V11 metric under
 
 ### Validated Performance Envelope
 
-| Stress Dimension | Tested Range | Outcome | Key Finding |
-| :--- | :--- | :--- | :--- |
-| Signal Strength (σ) | 1.5 – 15.0 km/s | ✅ Separation maintained | Margin degrades smoothly from +0.76 to +0.15; no cliff |
-| Seed Reproducibility | Seeds {1, 42, 123, 999} | ✅ Ordering preserved | Field margin min = +0.016; no ordering violations |
-| Distributional Separation | 95% NRI non-overlap | ✅ Fully separated | Signal NRI upper < Control NRI lower at all tested σ |
-| Gaussian Obs. Noise | σ_plx ≤ 0.5 mas, σ_pm ≤ 1.0 mas/yr | ✅ All 90 conditions pass | ΔSig < 0.006; PM errors dominate over parallax |
+| Stress Dimension         | Tested Range                          | Outcome              | Key Finding                                               |
+| :----------------------- | :------------------------------------ | :------------------- | :-------------------------------------------------------- |
+| Signal Strength (σ)      | 1.5 – 15.0 km/s                       | ✅ Separation maintained | Margin degrades smoothly from +0.76 to +0.15; no cliff    |
+| Seed Reproducibility     | Seeds {1, 42, 123, 999}               | ✅ Ordering preserved    | Field margin min = +0.016; no ordering violations         |
+| Distributional Separation| 95% NRI non-overlap                   | ✅ Fully separated       | Signal NRI upper < Control NRI lower at all tested σ      |
+| Gaussian Obs. Noise      | σ_plx ≤ 0.5 mas, σ_pm ≤ 1.0 mas/yr   | ✅ All 90 conditions pass | ΔSig < 0.006; PM errors dominate over parallax            |
 
 ### Scientific Claim Boundary
 
 > Under independent Gaussian observational noise spanning Gaia-like error amplitudes, and for intrinsic velocity dispersions up to 15 km/s, the V11 metric retains distributional separation between injected convergent structure and geometry-only/isotropic null controls. Sensitivity degradation is negligible (<1% ratio shift) across the tested noise range.
 
-This does NOT establish robustness to full Gaia DR3 systematics (covariance, scan-law, magnitude/color dependence, crowding, binaries). Those remain Phase 3 requirements.
-
-### Locked Configuration
-
-All Phase 2 results are reproducible via `phase2_signal_sweep.py`, `phase2_robustness_audit.py`, `phase2_statistical_margin.py`, and `phase2d_measurement_noise.py` with seed=42 and parameters as documented in each script header.
+This does NOT establish robustness to full Gaia DR3 systematics (covariance, scan-law, magnitude/color dependence, crowding, binaries). Those remain Phase 3+ requirements.
 
 ### Formal Separation Criterion
 
@@ -159,39 +155,110 @@ Distributional separation between signal and control populations is defined as:
 $$Q_{97.5}(R_{\text{signal}}) < Q_{2.5}(R_{\text{control}})$$
 
 where $R = E_{\text{real}} / E_{\text{null},i}$ is the prediction-error ratio distribution computed over $N_{\text{perm}}$ local-shuffle null realizations, and $Q_p$ denotes the $p$-th percentile. This criterion requires complete non-overlap of the central 95% null-ratio intervals and is applied identically across all validation phases.
+
+### Locked Configuration
+
+All Phase 2 results are reproducible via `phase2_signal_sweep.py`, `phase2_robustness_audit.py`, `phase2_statistical_margin.py`, and `phase2d_measurement_noise.py` with seed=42 and parameters as documented in each script header.
+
+---
+
+## Pillar VII: Phase 3 Validation — Membership Contamination & Statistical Rigor
+
+TRACEBIND Phase 3 tested the metric’s resilience to realistic membership impurity and established publication-grade statistical reporting standards. This phase bridges synthetic validation and real-data application.
+
+### Kinematic Contamination Robustness
+
+Using the locked V2.0 generator with deterministic RNG streams, the metric was tested under kinematic-only contamination (spatial coordinates preserved, PMs replaced with field values):
+
+| Purity | Signal Median | Projection Median | Field Median | Separation Maintained |
+| :----- | :------------ | :---------------- | :----------- | :-------------------- |
+| 100%   | 0.207         | 0.960             | 0.811        | ✅ Yes                 |
+| 90%    | 0.244         | 1.002             | 0.858        | ✅ Yes                 |
+| 80%    | 0.311         | 0.962             | 0.836        | ✅ Yes                 |
+| 70%    | 0.385         | 0.997             | 0.841        | ⚠️ Near limit (2/3 seeds) |
+
+At 70% purity, separation was maintained in 2 of 3 Monte Carlo realizations, defining the **operational boundary for membership quality**. Below this threshold, the metric cannot reliably distinguish signal from contaminated field.
+
+### Statistical Reporting Standard
+
+Phase 3 established mandatory reporting requirements for all subsequent analyses:
+-   **Wilson 95% CI** for all binomial success rates (replacing point estimates)
+-   **Independent null RNG streams** per population (no shared state)
+-   **Effect size reporting** alongside p-values
+-   **No qualitative labels** ("robust"/"failed") without quantitative support
+
+### Phase 3 Boundary
+
+-   ❌ Full Gaia DR3 covariance propagation not yet implemented
+-   ❌ Spatial contamination (position corruption) not yet tested
+-   ❌ Real-data membership probabilities not yet incorporated
+
+---
+
+## Pillar VIII: Real Gaia DR3 Hyades Application
+
+### Result
+
+Statistically significant detection (Mann-Whitney U $p = 1.67 \times 10^{-22}$, effect size $r = 0.220$) but formal $Q_{97.5}/Q_{2.5}$ separation **NOT achieved**.
+
+### Interpretation
+
+TRACEBIND detects real position-velocity structure in Hyades members. Overlap with field distribution is attributed to:
+1.  Residual contamination in astrometric-only membership selection (no literature membership probabilities)
+2.  Absence of full 5D covariance propagation in distance/PM conversion
+3.  Possible non-member interlopers passing RUWE/G-mag cuts
+
+### Operational Boundary Defined
+
+Under Gaia DR3 astrometric selection alone (no literature membership probabilities, no covariance), the metric distinguishes Hyades from field at high significance but does not achieve clean distributional separation per the formal criterion.
+
+### Locked Baseline
+
+| Population | Median Ratio | Notes                     |
+| :--------- | :----------- | :------------------------ |
+| Hyades     | 0.8492       | Astrometric-only selection |
+| Field      | 0.9075       | Matched G-mag, excluded zone |
+
+All future real-data improvements (better membership, covariance propagation, spatial contamination testing) must exceed this baseline to demonstrate progress.
+
 ---
 
 ## What TRACEBIND Has Demonstrated
 
-Current evidence supports the following conclusions:
-
 ### Established
 
-* Reproducible multi-survey reconciliation can recover externally validated astrophysical targets.
-* The $C_f$ statistic is analytically equivalent to the Mean Resultant Length.
-* Gaia proper-motion fields contain statistically significant directional coherence.
-* Residual coherence persists after first-order Galactic-background subtraction.
-* The composite astrometric tension metric significantly enriches for Gaia DR3 Non-Single Star solutions and provides independent predictive value.
-* High-tension stars show no statistically significant UV activity enhancement relative to matched controls.
-* High-tension stars show no enrichment in cataloged TIC variability flags.
-* High-tension stars are significantly enriched in known binary systems (WDS/SB9).
+-   Reproducible multi-survey reconciliation can recover externally validated astrophysical targets.
+-   The $C_f$ statistic is analytically equivalent to the Mean Resultant Length.
+-   Gaia proper-motion fields contain statistically significant directional coherence.
+-   Residual coherence persists after first-order Galactic-background subtraction.
+-   The composite astrometric tension metric significantly enriches for Gaia DR3 Non-Single Star solutions and provides independent predictive value.
+-   High-tension stars show no statistically significant UV activity enhancement relative to matched controls.
+-   High-tension stars show no enrichment in cataloged TIC variability flags.
+-   High-tension stars are significantly enriched in known binary systems (WDS/SB9).
+-   The V11 LOO metric reliably detects injected position-velocity coupling in synthetic data while rejecting geometry-only and isotropic nulls.
+-   The metric maintains separation under Gaussian noise (σ_plx ≤ 0.5 mas, σ_pm ≤ 1.0 mas/yr) and velocity dispersions up to 15 km/s.
+-   The metric tolerates kinematic contamination down to ~70% purity before separation degrades.
+-   Real Gaia DR3 Hyades members show statistically significant position-velocity structure relative to matched field stars.
 
 ### Not Established
 
 TRACEBIND does not currently demonstrate:
 
-* Discovery of new stellar streams or moving groups.
-* Definitive discovery of specific exoplanets, brown dwarfs, or companion masses based solely on astrometric tension.
-* Evidence for or against dark matter, MOND, or alternative gravity theories.
-* Identification of previously unknown Galactic substructures.
+-   Discovery of new stellar streams or moving groups.
+-   Definitive discovery of specific exoplanets, brown dwarfs, or companion masses based solely on astrometric tension.
+-   Evidence for or against dark matter, MOND, or alternative gravity theories.
+-   Identification of previously unknown Galactic substructures.
+-   Clean $Q_{97.5}/Q_{2.5}$ separation in real Gaia DR3 data (only statistical significance achieved).
+-   Robustness to full Gaia DR3 covariance, scan-law systematics, or spatial contamination.
+-   Causal position-velocity coupling in any real stellar population.
 
-Such claims require additional phase-space analysis, radial velocities, Proper Motion Anomaly (PMa) calculations, and independent validation.
+Such claims require additional phase-space analysis, radial velocities, Proper Motion Anomaly (PMa) calculations, full covariance propagation, literature-grade membership catalogs, and independent validation.
 
 ---
 
 ## The Philosophy of Anomaly Prioritization
 
-TRACEBIND does not attempt to replace astrophysical theory. 
+TRACEBIND does not attempt to replace astrophysical theory.
 
 Its purpose is to systematically identify where survey descriptions, catalog assumptions, and physical interpretations begin to diverge from observations. In this sense, TRACEBIND functions as a scientific stress-testing framework for astronomical catalogs and models.
 
@@ -199,10 +266,10 @@ Rather than searching directly for planets, binaries, AGN, stellar streams, or o
 
 The framework is designed to move systematically through four stages:
 
-1. Detection of tension
-2. Validation of tension
-3. Physical attribution of tension
-4. Follow-up prioritization
+1.  Detection of tension
+2.  Validation of tension
+3.  Physical attribution of tension
+4.  Follow-up prioritization
 
 Scientific progress often begins not with answers, but with careful observation. The role of TRACEBIND is to create conditions under which meaningful patterns can emerge from the data and then be tested rigorously.
 
