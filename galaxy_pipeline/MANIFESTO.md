@@ -127,6 +127,33 @@ These are exclusively Phase 2 concerns.
 
 ---
 
+---
+
+## Pillar VI: Phase 2 Validation — Robustness Envelope
+
+TRACEBIND Phase 2 established the operational boundaries of the V11 metric under controlled degradation. All tests used the locked V11 LOO predictor with per-population local-shuffle baselines.
+
+### Validated Performance Envelope
+
+| Stress Dimension | Tested Range | Outcome | Key Finding |
+| :--- | :--- | :--- | :--- |
+| Signal Strength (σ) | 1.5 – 15.0 km/s | ✅ Separation maintained | Margin degrades smoothly from +0.76 to +0.15; no cliff |
+| Seed Reproducibility | Seeds {1, 42, 123, 999} | ✅ Ordering preserved | Field margin min = +0.016; no ordering violations |
+| Distributional Separation | 95% NRI non-overlap | ✅ Fully separated | Signal NRI upper < Control NRI lower at all tested σ |
+| Gaussian Obs. Noise | σ_plx ≤ 0.5 mas, σ_pm ≤ 1.0 mas/yr | ✅ All 90 conditions pass | ΔSig < 0.006; PM errors dominate over parallax |
+
+### Scientific Claim Boundary
+
+> Under independent Gaussian observational noise spanning Gaia-like error amplitudes, and for intrinsic velocity dispersions up to 15 km/s, the V11 metric retains distributional separation between injected convergent structure and geometry-only/isotropic null controls. Sensitivity degradation is negligible (<1% ratio shift) across the tested noise range.
+
+This does NOT establish robustness to full Gaia DR3 systematics (covariance, scan-law, magnitude/color dependence, crowding, binaries). Those remain Phase 3 requirements.
+
+### Locked Configuration
+
+All Phase 2 results are reproducible via `phase2_signal_sweep.py`, `phase2_robustness_audit.py`, `phase2_statistical_margin.py`, and `phase2d_measurement_noise.py` with seed=42 and parameters as documented in each script header.
+
+---
+
 ## What TRACEBIND Has Demonstrated
 
 Current evidence supports the following conclusions:
