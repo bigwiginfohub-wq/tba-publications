@@ -208,6 +208,24 @@ TRACEBIND detects real position-velocity structure in Hyades members. Overlap wi
 2.  Absence of full 5D covariance propagation in distance/PM conversion
 3.  Possible non-member interlopers passing RUWE/G-mag cuts
 
+### Phase 4: Real Gaia DR3 Hyades Application
+
+**Result:** Statistically significant detection (Mann-Whitney U p = 1.67×10⁻²², 
+effect size r = 0.220) but formal Q₉₇.₅/Q₂.₅ separation NOT achieved.
+
+**Interpretation:** The overlap preventing formal separation may arise from 
+residual contamination in the membership sample, characteristics of the control 
+population, observational uncertainties, or limitations of the current operational 
+boundary. Additional analyses using consensus membership catalogs and alternative 
+control constructions are planned to evaluate these possibilities.
+
+**Metric Stability:** Hyades median ratio = 0.8492 (stable across V3–V5 
+implementations and multiple runs). Field median varies with control construction 
+(V3: 1.0153, V5: 0.9657), indicating the null distribution is more sensitive to 
+sample selection than the signal measurement.
+
+**Locked Baseline:** All future real-data improvements must exceed this baseline.
+
 ### Operational Boundary Defined
 
 Under Gaia DR3 astrometric selection alone (no literature membership probabilities, no covariance), the metric distinguishes Hyades from field at high significance but does not achieve clean distributional separation per the formal criterion.
