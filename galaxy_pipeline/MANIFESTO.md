@@ -208,23 +208,19 @@ TRACEBIND detects real position-velocity structure in Hyades members. Overlap wi
 2.  Absence of full 5D covariance propagation in distance/PM conversion
 3.  Possible non-member interlopers passing RUWE/G-mag cuts
 
-### Phase 4: Real Gaia DR3 Hyades Application
+### Phase 4: Real Gaia DR3 Hyades Application (V5)
 
-**Result:** Statistically significant detection (Mann-Whitney U p = 1.67×10⁻²², 
-effect size r = 0.220) but formal Q₉₇.₅/Q₂.₅ separation NOT achieved.
+**Result:** Statistically significant detection (Mann-Whitney U p < 10⁻⁵⁹) but formal Q₉₇.₅/Q₂.₅ separation NOT achieved under current control construction.
 
-**Interpretation:** The overlap preventing formal separation may arise from 
-residual contamination in the membership sample, characteristics of the control 
-population, observational uncertainties, or limitations of the current operational 
-boundary. Additional analyses using consensus membership catalogs and alternative 
-control constructions are planned to evaluate these possibilities.
+**Stability:** Hyades median ratio = 0.8492 (stable across V3–V5). Field control shows moderate variability (median 0.96–1.01) depending on realization.
 
-**Metric Stability:** Hyades median ratio = 0.8492 (stable across V3–V5 
-implementations and multiple runs). Field median varies with control construction 
-(V3: 1.0153, V5: 0.9657), indicating the null distribution is more sensitive to 
-sample selection than the signal measurement.
+**Systematics:** 
+- Magnitude matching KS ≈ 0.39 indicates residual observational differences between Hyades and field.
+- Field median distance ≈ 890 pc vs Hyades 49 pc.
 
-**Locked Baseline:** All future real-data improvements must exceed this baseline.
+**Interpretation:** TRACEBIND consistently detects kinematic coherence in Hyades members. The failure to achieve formal separation is sensitive to control sample construction (magnitude matching, distance exclusion). Further validation via stratified matching, bootstrap controls, and consensus membership catalogs is required before attributing overlap to specific physical causes.
+
+**Locked Baseline:** Hyades median = 0.8492, Field median ≈ 0.96.
 
 ### Operational Boundary Defined
 
