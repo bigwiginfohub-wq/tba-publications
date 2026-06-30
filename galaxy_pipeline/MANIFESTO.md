@@ -237,6 +237,20 @@ All future real-data improvements (better membership, covariance propagation, sp
 
 ---
 
+### Phase 4: Real Gaia DR3 Hyades Application (V5/V6)
+
+**Result:** Statistically significant detection (Mann-Whitney U p < 10⁻⁶³) but formal Q₉₇.₅/Q₂.₅ separation NOT achieved under current control construction.
+
+**Metric Stability:** Hyades median ratio = 0.8492 (stable across V3–V6 implementations and multiple runs). Field median varies with control realization (0.96–1.01), indicating the null distribution is more sensitive to sample selection than the signal measurement.
+
+**Systematics:** 
+- Magnitude matching KS ≈ 0.37 indicates residual observational differences between Hyades and field.
+- Field median distance ≈ 890 pc vs Hyades 49 pc.
+
+**Interpretation:** TRACEBIND consistently detects kinematic coherence in Hyades members relative to matched field stars. The failure to achieve formal separation is sensitive to control sample construction (magnitude matching, distance exclusion). Further validation via stratified matching, bootstrap controls, and consensus membership catalogs is required before attributing overlap to specific physical causes.
+
+**Locked Baseline:** Hyades median = 0.8492, Field median ≈ 0.98.
+
 ## What TRACEBIND Has Demonstrated
 
 ### Established
