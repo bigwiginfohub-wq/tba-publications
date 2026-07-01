@@ -1,0 +1,19 @@
+{
+  "metric_version": "V11",
+  "k_predict": 30,
+  "k_shuffle": 50,
+  "n_permutations": 200,
+  "random_seed": 42,
+  "separation_criterion": "Q97.5(sig) < Q2.5(ctrl)",
+  "hyades_catalog": "hyades_gaia_dr3.csv",
+  "field_cache": "hyades_field_control_v5.csv",
+  "n_hyades": 820,
+  "n_field": 820,
+  "hyades_median_ratio": 0.8492468746652018,
+  "field_median_ratio": 0.9848388909377244,
+  "separated": "False",
+  "mann_whitney_p": 1.4899991639586007e-63,
+  "effect_size": 0.01475,
+  "g_mag_ks_stat": 0.3719512195121951,
+  "g_mag_ks_pval": 7.256997929510788e-51
+}
