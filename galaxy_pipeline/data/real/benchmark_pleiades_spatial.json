@@ -1,0 +1,412 @@
+{
+  "cluster": "pleiades_spatial",
+  "metric_version": "V11",
+  "summary": {
+    "cluster_median_mean": 0.9612624081029492,
+    "field_median_mean": 0.9939308542096582,
+    "separation_frequency": 0.0,
+    "mean_ks": 0.04251435777431098
+  },
+  "details": [
+    {
+      "realization": 0,
+      "ks_stat": 0.04203432137285491,
+      "cluster_median": 0.9588355519709089,
+      "field_median": 1.0105381642802787,
+      "separated": false,
+      "effect_size": 0.1205
+    },
+    {
+      "realization": 1,
+      "ks_stat": 0.04359438377535101,
+      "cluster_median": 0.9596031666349845,
+      "field_median": 0.9733709491466109,
+      "separated": false,
+      "effect_size": 0.3802
+    },
+    {
+      "realization": 2,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9587681318828312,
+      "field_median": 1.0326158956435183,
+      "separated": false,
+      "effect_size": 0.02675
+    },
+    {
+      "realization": 3,
+      "ks_stat": 0.04167550702028081,
+      "cluster_median": 0.9615235446155996,
+      "field_median": 1.0003198139591967,
+      "separated": false,
+      "effect_size": 0.1489
+    },
+    {
+      "realization": 4,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9601402773945279,
+      "field_median": 1.0026214633502155,
+      "separated": false,
+      "effect_size": 0.15835
+    },
+    {
+      "realization": 5,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9624515903659319,
+      "field_median": 0.973561365292102,
+      "separated": false,
+      "effect_size": 0.367425
+    },
+    {
+      "realization": 6,
+      "ks_stat": 0.04315548621944878,
+      "cluster_median": 0.959187081451893,
+      "field_median": 1.0254521219054302,
+      "separated": false,
+      "effect_size": 0.03735
+    },
+    {
+      "realization": 7,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9674040978076123,
+      "field_median": 0.9939150131941455,
+      "separated": false,
+      "effect_size": 0.200725
+    },
+    {
+      "realization": 8,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9602217768487002,
+      "field_median": 0.9612685971564467,
+      "separated": false,
+      "effect_size": 0.499975
+    },
+    {
+      "realization": 9,
+      "ks_stat": 0.04271814872594904,
+      "cluster_median": 0.9604414504050771,
+      "field_median": 0.9829191116066931,
+      "separated": false,
+      "effect_size": 0.27255
+    },
+    {
+      "realization": 10,
+      "ks_stat": 0.042615444617784715,
+      "cluster_median": 0.9609542441552464,
+      "field_median": 0.9862958581838176,
+      "separated": false,
+      "effect_size": 0.2408
+    },
+    {
+      "realization": 11,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9647223383968998,
+      "field_median": 0.9796386149167418,
+      "separated": false,
+      "effect_size": 0.344575
+    },
+    {
+      "realization": 12,
+      "ks_stat": 0.04359438377535101,
+      "cluster_median": 0.9609906063370965,
+      "field_median": 0.9799821506324675,
+      "separated": false,
+      "effect_size": 0.2656
+    },
+    {
+      "realization": 13,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9645830114744793,
+      "field_median": 0.9722750915215075,
+      "separated": false,
+      "effect_size": 0.39485
+    },
+    {
+      "realization": 14,
+      "ks_stat": 0.043675507020280814,
+      "cluster_median": 0.9567387098171324,
+      "field_median": 0.9718649645909705,
+      "separated": false,
+      "effect_size": 0.3493
+    },
+    {
+      "realization": 15,
+      "ks_stat": 0.04315548621944878,
+      "cluster_median": 0.9628577744604649,
+      "field_median": 1.0150422618435215,
+      "separated": false,
+      "effect_size": 0.0581
+    },
+    {
+      "realization": 16,
+      "ks_stat": 0.043675507020280814,
+      "cluster_median": 0.9601040597612888,
+      "field_median": 0.9643841012909713,
+      "separated": false,
+      "effect_size": 0.486925
+    },
+    {
+      "realization": 17,
+      "ks_stat": 0.04157540301612064,
+      "cluster_median": 0.9594487836876784,
+      "field_median": 1.0255792181142582,
+      "separated": false,
+      "effect_size": 0.0413
+    },
+    {
+      "realization": 18,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9601933672585996,
+      "field_median": 1.002377615152077,
+      "separated": false,
+      "effect_size": 0.157775
+    },
+    {
+      "realization": 19,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.961583925866822,
+      "field_median": 0.9833460213818066,
+      "separated": false,
+      "effect_size": 0.29055
+    },
+    {
+      "realization": 20,
+      "ks_stat": 0.04211804472178887,
+      "cluster_median": 0.9609158958813913,
+      "field_median": 0.9762664677720445,
+      "separated": false,
+      "effect_size": 0.357425
+    },
+    {
+      "realization": 21,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9627910947099035,
+      "field_median": 0.9850905062351754,
+      "separated": false,
+      "effect_size": 0.27335
+    },
+    {
+      "realization": 22,
+      "ks_stat": 0.044135465418616744,
+      "cluster_median": 0.9587189334252739,
+      "field_median": 0.9938647527917528,
+      "separated": false,
+      "effect_size": 0.1721
+    },
+    {
+      "realization": 23,
+      "ks_stat": 0.042575403016120644,
+      "cluster_median": 0.9589199815518051,
+      "field_median": 0.9936229314355564,
+      "separated": false,
+      "effect_size": 0.1643
+    },
+    {
+      "realization": 24,
+      "ks_stat": 0.04299427977119085,
+      "cluster_median": 0.9589255827376821,
+      "field_median": 0.9951002230464898,
+      "separated": false,
+      "effect_size": 0.16705
+    },
+    {
+      "realization": 25,
+      "ks_stat": 0.04359438377535101,
+      "cluster_median": 0.9556106804482536,
+      "field_median": 1.026875471645773,
+      "separated": false,
+      "effect_size": 0.03685
+    },
+    {
+      "realization": 26,
+      "ks_stat": 0.04323816952678107,
+      "cluster_median": 0.9647858162429932,
+      "field_median": 1.005637466314891,
+      "separated": false,
+      "effect_size": 0.13315
+    },
+    {
+      "realization": 27,
+      "ks_stat": 0.04209542381695268,
+      "cluster_median": 0.9606327069501213,
+      "field_median": 0.9944082135265266,
+      "separated": false,
+      "effect_size": 0.1637
+    },
+    {
+      "realization": 28,
+      "ks_stat": 0.04313546541861674,
+      "cluster_median": 0.9603611347460139,
+      "field_median": 0.9753360870874859,
+      "separated": false,
+      "effect_size": 0.3363
+    },
+    {
+      "realization": 29,
+      "ks_stat": 0.04313546541861674,
+      "cluster_median": 0.965335030063445,
+      "field_median": 0.9952130554743951,
+      "separated": false,
+      "effect_size": 0.247175
+    },
+    {
+      "realization": 30,
+      "ks_stat": 0.04313546541861674,
+      "cluster_median": 0.9594569964351152,
+      "field_median": 0.9710651956598907,
+      "separated": false,
+      "effect_size": 0.3584
+    },
+    {
+      "realization": 31,
+      "ks_stat": 0.042615444617784715,
+      "cluster_median": 0.9633411138471548,
+      "field_median": 0.9798321372736616,
+      "separated": false,
+      "effect_size": 0.351175
+    },
+    {
+      "realization": 32,
+      "ks_stat": 0.04259542381695268,
+      "cluster_median": 0.963240827689626,
+      "field_median": 1.0419561966259374,
+      "separated": false,
+      "effect_size": 0.024875
+    },
+    {
+      "realization": 33,
+      "ks_stat": 0.04115808632345294,
+      "cluster_median": 0.9655330740272585,
+      "field_median": 1.0045236811769436,
+      "separated": false,
+      "effect_size": 0.154
+    },
+    {
+      "realization": 34,
+      "ks_stat": 0.042615444617784715,
+      "cluster_median": 0.9601402773945279,
+      "field_median": 0.9827150091545447,
+      "separated": false,
+      "effect_size": 0.303825
+    },
+    {
+      "realization": 35,
+      "ks_stat": 0.04311440457618305,
+      "cluster_median": 0.9625349793170055,
+      "field_median": 0.9865866856480204,
+      "separated": false,
+      "effect_size": 0.24885
+    },
+    {
+      "realization": 36,
+      "ks_stat": 0.04153536141445658,
+      "cluster_median": 0.9630445000092361,
+      "field_median": 0.99195874176132,
+      "separated": false,
+      "effect_size": 0.22325
+    },
+    {
+      "realization": 37,
+      "ks_stat": 0.04203432137285491,
+      "cluster_median": 0.9601459697794378,
+      "field_median": 1.0107412861809681,
+      "separated": false,
+      "effect_size": 0.09695
+    },
+    {
+      "realization": 38,
+      "ks_stat": 0.04311440457618305,
+      "cluster_median": 0.9602087047662753,
+      "field_median": 1.0249525308804452,
+      "separated": false,
+      "effect_size": 0.039275
+    },
+    {
+      "realization": 39,
+      "ks_stat": 0.042115444617784714,
+      "cluster_median": 0.9628799618855546,
+      "field_median": 0.9921039678303757,
+      "separated": false,
+      "effect_size": 0.20145
+    },
+    {
+      "realization": 40,
+      "ks_stat": 0.042574362974518984,
+      "cluster_median": 0.9653877389739627,
+      "field_median": 0.9771131486426223,
+      "separated": false,
+      "effect_size": 0.35455
+    },
+    {
+      "realization": 41,
+      "ks_stat": 0.04271814872594904,
+      "cluster_median": 0.9652117144808987,
+      "field_median": 0.9799975871211991,
+      "separated": false,
+      "effect_size": 0.344625
+    },
+    {
+      "realization": 42,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9624275350927405,
+      "field_median": 0.9663786102036049,
+      "separated": false,
+      "effect_size": 0.460075
+    },
+    {
+      "realization": 43,
+      "ks_stat": 0.04419552782111284,
+      "cluster_median": 0.9611820792251001,
+      "field_median": 1.0091207997011407,
+      "separated": false,
+      "effect_size": 0.130825
+    },
+    {
+      "realization": 44,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9583335885487445,
+      "field_median": 0.9738464146674874,
+      "separated": false,
+      "effect_size": 0.348475
+    },
+    {
+      "realization": 45,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.9631091185821208,
+      "field_median": 0.9918800610610372,
+      "separated": false,
+      "effect_size": 0.223475
+    },
+    {
+      "realization": 46,
+      "ks_stat": 0.042174466978679145,
+      "cluster_median": 0.9572883064666435,
+      "field_median": 0.9980195026443703,
+      "separated": false,
+      "effect_size": 0.147775
+    },
+    {
+      "realization": 47,
+      "ks_stat": 0.04271814872594904,
+      "cluster_median": 0.9622004042859023,
+      "field_median": 1.014476312929712,
+      "separated": false,
+      "effect_size": 0.067875
+    },
+    {
+      "realization": 48,
+      "ks_stat": 0.042198127925117006,
+      "cluster_median": 0.9602087047662753,
+      "field_median": 1.0194270905057237,
+      "separated": false,
+      "effect_size": 0.056625
+    },
+    {
+      "realization": 49,
+      "ks_stat": 0.04167810712428497,
+      "cluster_median": 0.959494462223222,
+      "field_median": 1.0010641823210347,
+      "separated": false,
+      "effect_size": 0.119025
+    }
+  ]
+}
