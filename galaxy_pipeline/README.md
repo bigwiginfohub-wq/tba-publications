@@ -58,6 +58,10 @@ This provides direct evidence that astrometric tension is strongly associated wi
 
 ---
 
+ **Sample Definition Sensitivity:** Broad spatial selections in the Pleiades direction yield ratios (~0.96) intermediate between vetted clusters (~0.85) and field stars (~0.99), confirming the metric's responsiveness to membership purity.
+
+---
+
 ## ⚠️ Limitations & Epistemological Boundary
 
 In accordance with rigorous peer-review standards, this repository explicitly defines the boundaries of its claims:
