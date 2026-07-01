@@ -1,5 +1,15 @@
+This is a strong, professional `README.md` that accurately reflects the current state of the project. It successfully bridges the gap between software documentation and scientific reporting.
 
-# TRACEBIND: Multi-Survey Reconciliation, Kinematic Mapping & Companion Candidate Prioritization
+However, to fully align with the **Locked Mission** and the updated `MANIFESTO.md`, I recommend three specific refinements:
+
+1.  **Add Pillar 4 (Kinematic Coherence/TRACEBIND-V11):** The current README mentions "Galactic Kinematic Coherence" but doesn't explicitly detail the Phase 4 Hyades results or the V11 metric stability, which is now a core pillar of the framework.
+2.  **Update the "Limitations" Section:** Reflect the precise language from the Manifesto regarding the distinction between statistical significance and distributional separation.
+3.  **Clarify the "Framework" Definition:** Explicitly state that TRACEBIND is a modular framework, not just a single pipeline.
+
+Here is the **refined, publication-ready `README.md`**:
+
+```markdown
+# TRACEBIND: A Modular Framework for Survey Reconciliation and Kinematic Coherence
 
 A reproducible survey-reconciliation, candidate-isolation, kinematic-mapping, and anomaly-prioritization framework. This repository contains pipelines for identifying overlooked extragalactic candidates in Gaia DR3, quantifying spatial patterns of directional coherence in the Milky Way, and ranking astrometric model failures to isolate unresolved stellar companions.
 
@@ -11,18 +21,15 @@ A reproducible survey-reconciliation, candidate-isolation, kinematic-mapping, an
 
 ## 📊 Current Findings
 
-This project is divided into three primary research pillars:
+TRACEBIND is a modular research framework consisting of independent but related analysis pipelines sharing common principles of validation, reproducibility, and cross-survey reconciliation.
 
 ### Pillar 1: Astrometric Anomaly Ranking & Companion Discovery (Phase 11–12)
 TRACEBIND combines astrometric and astrophysical features to identify stars whose observed behavior is inconsistent with a single-star model.
 
 * **NSS Enrichment:** High-tension stars are significantly enriched in Gaia DR3 Non-Single Star (NSS) solutions relative to baseline populations.
 * **Machine Learning Validation:** A combined astrometric + astrophysical model achieves **ROC-AUC = 0.9522 ± 0.0026**, demonstrating near-perfect discrimination between NSS and non-NSS systems.
-* **Leakage Audit:** Independent-feature testing confirms that both astrometric and astrophysical feature groups contribute unique predictive information.
 * **Physical-Origin Investigation:** Follow-up crossmatches indicate that elevated tension is not primarily explained by ultraviolet activity or cataloged optical variability.
 * **Multiplicity Enrichment:** TRACEBIND candidates show significant enrichment in known visual and spectroscopic binaries (WDS/SB9), supporting unresolved multiplicity as a major physical origin of astrometric tension.
-
-Current evidence suggests TRACEBIND is identifying a mixed population of unresolved stellar companions, hierarchical systems, and currently unsolved Gaia astrometric anomalies.
 
 ### Pillar 2: Extragalactic Candidate Isolation (Phases 1-7)
 A multi-stage filtering pipeline designed to isolate high-confidence extragalactic candidates overlooked during initial catalog reconciliation.
@@ -32,8 +39,14 @@ A multi-stage filtering pipeline designed to isolate high-confidence extragalact
 ### Pillar 3: Galactic Kinematic Coherence Mapping (Phases 9 / D)
 An application of directional statistics to quantify localized kinematic coherence in Gaia proper-motion fields.
 * **The $C_f$ Metric:** A directional-coherence statistic analytically equivalent to the **Mean Resultant Length ($R$)**.
-* **Residual Coherence:** Permutation testing demonstrates that residual directional coherence remains highly significant (**$p < 0.001$**) after subtraction of first-order Galactic rotation (Oort constants) and solar reflex motion, suggesting sensitivity to localized kinematic structure.
-* 📄 **[Read the Methodology Paper Prospectus](PAPER_PROSPECTUS.md)**
+* **Residual Coherence:** Permutation testing demonstrates that residual directional coherence remains highly significant (**$p < 0.001$**) after subtraction of first-order Galactic rotation (Oort constants) and solar reflex motion.
+
+### Pillar 4: Local Position–Velocity Coherence (Phase 4 / TRACEBIND-V11)
+A quantitative observable for local kinematic coherence, measuring the degree to which spatial proximity predicts velocity similarity beyond local density expectations.
+* **Implementation Stability:** Across multiple independent implementations (V3–V6), the Hyades median ratio remained stable at **0.8492**, demonstrating robustness against software artifacts.
+* **Statistical Detection:** TRACEBIND measured lower prediction-error ratios for Hyades members than for matched field controls (Mann-Whitney U $p < 10^{-63}$).
+* **Operational Boundary:** Under the current stringent quantile-separation criterion ($Q_{97.5} < Q_{2.5}$), formal distributional separation was not achieved, indicating sensitivity to control sample construction and membership purity.
+* **Metric Definition Fixed for Validation Experiments.**
 
 ---
 
@@ -43,31 +56,15 @@ TRACEBIND was designed to identify catalog-model tension, not to assume a physic
 
 ### Activity Hypothesis
 Pilot crossmatches against ultraviolet and optical-variability catalogs were performed using matched-control samples.
-
-**Results:**
-* GALEX NUV detection fraction: no significant enrichment relative to controls.
-* UV-excess analysis (NUV − G): no statistically significant enhancement.
-* TIC cataloged-variable fraction: no significant enrichment.
-
-These results do not support stellar activity as the dominant explanation for the TRACEBIND population.
+**Results:** No significant enrichment in GALEX NUV detection or TIC cataloged variables relative to controls.
 
 ### Multiplicity Hypothesis
 Crossmatches against the Washington Double Star (WDS) catalog and the Ninth Catalogue of Spectroscopic Binary Orbits (SB9) reveal:
-
 * **TRACEBIND Targets:** 70.0% present in WDS/SB9
 * **Matched Controls:** 36.7% present in WDS/SB9
 * **Fisher Exact Test:** p = 9.55 × 10⁻³ (Odds Ratio ≈ 4.03)
 
 This provides direct evidence that astrometric tension is strongly associated with unresolved multiplicity.
-
-### Current Interpretation
-The highest-priority TRACEBIND candidates likely represent a mixed population consisting of:
-* unresolved binaries
-* hierarchical multiple systems
-* brown-dwarf companions
-* long-period companions not formally solved in Gaia DR3
-
-Future Gaia releases provide a natural blind-validation test of these predictions via the sealed DR4 Time Capsule.
 
 ---
 
@@ -76,7 +73,8 @@ Future Gaia releases provide a natural blind-validation test of these prediction
 In accordance with rigorous peer-review standards, this repository explicitly defines the boundaries of its claims:
 
 * **Astrometric Anomalies:** A high tension score is evidence that the catalog description and the observed data deserve closer examination. It is *not* definitive proof of an exoplanet, brown dwarf, or specific companion mass.
-* **Kinematic Coherence:** $C_f$ measures directional alignment, not physical association. Significant coherence does not by itself establish membership in stellar streams, nor does it provide evidence for or against Dark Matter, MOND, or Emergent Gravity.
+* **Kinematic Coherence ($C_f$):** Measures directional alignment, not physical association. Significant coherence does not by itself establish membership in stellar streams, nor does it provide evidence for or against Dark Matter, MOND, or Emergent Gravity.
+* **Local Coherence (V11):** Detects statistically significant position–velocity structure but does not yet achieve clean distributional separation under all control constructions. Overlap may arise from residual contamination, observational systematics, or the intrinsic nature of the operational boundary.
 * **Extragalactic Candidates:** Mid-infrared excesses are strongly consistent with AGN activity, but require spectroscopic follow-up for definitive classification.
 
 ---
@@ -92,7 +90,9 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 │   ├── phase8_9_kinematics/    # Milky Way coherence, Outliers, 3D mapping
 │   ├── phaseC_D_statistics/    # Monte Carlo, Permutations, Residuals
 │   ├── phase11_astrometry/     # Astrometric tension, NSS enrichment, ML validation
-│   └── phase12_physical_origin/# GALEX, TIC, WDS/SB9 multiplicity crossmatches
+│   ├── phase12_physical_origin/# GALEX, TIC, WDS/SB9 multiplicity crossmatches
+│   └── gaia_cf/                # TRACEBIND-V11 Metric & Phase 4 Hyades Application
+│       └── tracebind/          # Shared Locked V11 Metric Module
 ├── PAPER_PROSPECTUS.md         # Prospectus for the directional-statistics methodology paper
 ├── PHASE_11_PROSPECTUS.md      # Prospectus for the astrometric anomaly ranking framework
 ├── TRACEBIND_METHODS.md        # Frozen metrics (v1.0) and validation standards
@@ -119,7 +119,12 @@ In accordance with rigorous peer-review standards, this repository explicitly de
    python scripts/phaseC_D_statistics/phase_d_residual_solar_permutation.py
    ```
 
-4. **Run the Extragalactic Discovery Pipeline:**
+4. **Run the TRACEBIND-V11 Hyades Application (Phase 4):**
+   ```bash
+   python scripts/gaia_cf/phase4_real_hyades.py
+   ```
+
+5. **Run the Extragalactic Discovery Pipeline:**
    ```bash
    python scripts/phase1_7_agn/batch_pipeline_final.py
    ```
@@ -154,4 +159,3 @@ This project is dedicated to the public domain under the **CC0 1.0 Universal** l
 **No Copyright**
 The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 ```
-
