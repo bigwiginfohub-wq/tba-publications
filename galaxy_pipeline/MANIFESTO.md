@@ -79,6 +79,31 @@ The overlap preventing formal separation may arise from residual contamination i
 
 **Metric Definition Fixed for Validation Experiments.**
 
+### Phase 4: Real Gaia DR3 Hyades Application (V6 - Robustness Study)
+
+**Result:** Statistically significant detection (Mann-Whitney U p < 10⁻⁶³) but formal Q₉₇.₅/Q₂.₅ separation achieved in only **12% (6/50)** of independent field realizations.
+
+**Metric Stability:** Hyades median ratio = **0.8494 ± 0.0044** (extremely stable across 50 bootstrap realizations). Field median ratio = **0.9857 ± 0.0224** (variable), indicating the null distribution is the dominant source of uncertainty.
+
+**Methodological Improvement:** 
+- Stratified magnitude matching reduced G-mag KS statistic from ~0.37 to **0.064**.
+- Single Gaia query + local bootstrapping ensures reproducibility and isolates sampling variance.
+
+**Interpretation:** TRACEBIND consistently measures lower prediction-error ratios for Hyades members than for matched field controls. However, complete distributional separation under the current operational criterion is not robust across all control realizations. This suggests the overlap is a persistent feature of the metric's sensitivity to local kinematic coherence versus field dispersion, rather than an artifact of poor observational matching.
+
+**Locked Baseline:** Hyades median = 0.8494, Field median ≈ 0.986. Metric V11 is frozen for all subsequent validation experiments.
+
+### Phase 4: Real Gaia DR3 Hyades Application (V6 - Benchmark Confirmed)
+
+**Result:** Statistically significant detection (p < 10⁻⁶³) but formal separation achieved in only **10–12%** of independent field realizations.
+
+**Benchmark Reproduction:** The Hyades baseline was successfully reproduced using the generic `run_benchmark.py` framework:
+- Cluster Median: **0.8499 ± 0.0039** (vs 0.8494 in V6)
+- Separation Frequency: **10%** (vs 12% in V6)
+- G-mag KS: **0.065** (consistent with V6)
+
+**Conclusion:** The TRACEBIND signal is stable across independent code paths. The variability in separation frequency is a property of the control population sampling, not the metric implementation.
+
 ---
 
 ## What TRACEBIND Has Demonstrated
