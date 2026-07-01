@@ -1,14 +1,4 @@
-This is a strong, professional `README.md` that accurately reflects the current state of the project. It successfully bridges the gap between software documentation and scientific reporting.
 
-However, to fully align with the **Locked Mission** and the updated `MANIFESTO.md`, I recommend three specific refinements:
-
-1.  **Add Pillar 4 (Kinematic Coherence/TRACEBIND-V11):** The current README mentions "Galactic Kinematic Coherence" but doesn't explicitly detail the Phase 4 Hyades results or the V11 metric stability, which is now a core pillar of the framework.
-2.  **Update the "Limitations" Section:** Reflect the precise language from the Manifesto regarding the distinction between statistical significance and distributional separation.
-3.  **Clarify the "Framework" Definition:** Explicitly state that TRACEBIND is a modular framework, not just a single pipeline.
-
-Here is the **refined, publication-ready `README.md`**:
-
-```markdown
 # TRACEBIND: A Modular Framework for Survey Reconciliation and Kinematic Coherence
 
 A reproducible survey-reconciliation, candidate-isolation, kinematic-mapping, and anomaly-prioritization framework. This repository contains pipelines for identifying overlooked extragalactic candidates in Gaia DR3, quantifying spatial patterns of directional coherence in the Milky Way, and ranking astrometric model failures to isolate unresolved stellar companions.
