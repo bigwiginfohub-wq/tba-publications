@@ -36,7 +36,7 @@ The TRACEBIND-V11 observable has been rigorously validated through synthetic inj
 *   **Calibration:** Simulated membership contamination demonstrates a smooth transition from coherent cluster values (~0.85) to field baselines (~0.99), establishing an empirical operating envelope.
 *   **Reproducibility:** Hyades median ratio remains stable at ~0.850 across independent code paths and RNG streams.
 *   **Operational Boundary:** Formal separation frequency declines monotonically with increasing contamination, defining the current discriminative limits of the V11 implementation.
-📊 **[View Purity Calibration Figure](data/real/purity_calibration_figure.png)**
+📊 **[View Purity Calibration Figure](galaxy_pipeline/figures/purity_calibration_figure.png)**
 
 ---
 
