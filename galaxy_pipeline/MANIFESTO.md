@@ -104,6 +104,17 @@ The overlap preventing formal separation may arise from residual contamination i
 
 **Conclusion:** The TRACEBIND signal is stable across independent code paths. The variability in separation frequency is a property of the control population sampling, not the metric implementation.
 
+### Phase 4E: Contamination Sensitivity & Calibration
+Systematic testing under simulated field contamination establishes the operational boundaries of the V11 observable.
+
+**Validated Response:**
+Median ratio transitions from coherent cluster values (~0.85) toward the field baseline (~0.99) as contamination increases beyond low levels. The apparent dip at 20% falls within overlapping confidence intervals and may reflect sampling variability rather than a systematic effect. Separation frequency declines monotonically with contamination, defining the metric's operational boundary under the current experimental design.
+
+**Consistency Check:**
+The observed Hyades measurement (R = 0.850) aligns with the low-contamination regime of this calibration curve, supporting its interpretation as a high-purity coherent population under current selection criteria.
+
+**Boundary Statement:**
+These simulations indicate that TRACEBIND V11 responds systematically to controlled degradation of membership purity. It does NOT yet function as a calibrated purity estimator for arbitrary populations, as the response depends on the specific field population, contamination model, and cluster kinematics used in these experiments.
 ---
 
 ## What TRACEBIND Has Demonstrated
