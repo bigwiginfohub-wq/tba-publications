@@ -94,6 +94,18 @@ Applied identical frozen V11 pipeline to broad spatial selection in Pleiades dir
 Hyades Median R = 0.849 ± 0.005 | Field R ≈ 0.985 | Sep. Freq ≈ 8%.  
 All future validation experiments must be compared against this locked reference.
 
+#### 4G: Neighborhood Size (k) Sensitivity Analysis
+Tested robustness of Hyades coherence signal across K_PREDICT ∈ {20, 25, 30, 35, 40} with K_SHUFFLE fixed at 50 and identical cluster/field samples held constant.
+
+**Primary Observable Stability:**  
+Cluster median ratio varies only 0.8276 → 0.8590 (range = 0.031, CV = 0.4%) across all tested k values. Field median remains extremely stable at 0.980 ± 0.003 regardless of k. This confirms the central tendency of the TRACEBIND V11 observable is reasonably insensitive to moderate changes in neighborhood size.
+
+**Separation Criterion Sensitivity:**  
+Formal Q₇.₅/Q₂.₅ separation frequency increases substantially at larger k: 0% (k=20–30) → 10% (k=35) → 55% (k=40). This reflects expected tail sensitivity: while medians remain stable, extreme quantiles shift sufficiently to alter overlap. The separation criterion is therefore more sensitive to k than the underlying observable itself.
+
+**Boundary Statement:**  
+These results do NOT establish k=40 as optimal. Larger neighborhoods may improve separation for Hyades specifically but could degrade performance for clusters with different spatial densities or velocity dispersions. k=30 remains the frozen baseline for generalization testing; future work must evaluate k-dependence on independently vetted clusters before any parameter tuning claims can be made.
+
 ---
 
 ## What TRACEBIND Has Demonstrated
