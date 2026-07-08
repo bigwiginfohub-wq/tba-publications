@@ -90,7 +90,7 @@ Applied identical frozen V11 pipeline to broad spatial selection in Pleiades dir
 
 **Core-Dominated Selection (4° Radius):**
 -   N = 2,665 sources | Median Distance = 139.3 pc | Median Parallax = 7.18 mas
--   Residual ~2% distance offset consistent with expected field-star fraction at this galactic latitude; confirms coordinates and quality cuts are correct.
+-   Residual ~2% distance offset is consistent with expected field-star fraction at this galactic latitude; provides strong evidence that the adopted coordinates and quality-selection pipeline are functioning as intended.
 
 **Vetted Membership Requirement:**
 Even the 4° core sample retains ~30–40% field contamination without explicit Pmem ≥ 0.9 filtering. Observed Hyades median R = 0.849 remains the only valid benchmark for intrinsic coherence claims.
@@ -128,7 +128,7 @@ These results do NOT establish k=40 as optimal. Larger neighborhoods may improve
 *   Real Gaia DR3 Hyades members show statistically significant position-velocity structure relative to matched field stars.
 *   **Implementation Stability:** Hyades median ratio = 0.849 ± 0.005 (stable across V3–V6 and benchmark reproduction).
 *   **Contamination Response:** Metric degrades gracefully toward field baseline as purity decreases, with separation frequency declining monotonically beyond 20% contamination.
-*   **Sample Definition Sensitivity:** Broad spatial selections yield intermediate ratios between vetted clusters and field, confirming metric responsiveness to membership purity.
+*   **Sample Definition Sensitivity:** Broad spatial selections yield intermediate ratios between vetted clusters and field, consistent with sensitivity to membership purity
 
 ### Not Established
 TRACEBIND does not currently demonstrate:
