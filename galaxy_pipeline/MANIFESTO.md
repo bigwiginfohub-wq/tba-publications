@@ -25,7 +25,7 @@ The philosophy is straightforward:
 TRACEBIND is organized into three primary research themes:
 
 ### Pillar I: Survey Reconciliation & Extragalactic Isolation
-The first application focuses on identifying high-confidence extragalactic candidates within Gaia DR3. The pipeline combines Gaia astrometric constraints, morphological indicators, infrared diagnostics, multi-survey cross-matching, and statistical filtering. A pilot analysis of ~12,500 sources produced a validated DESI-confirmed emission-line galaxy recovery case and several high-priority AGN candidates.
+The first application focuses on identifying high-confidence extragalactic candidates within Gaia DR3. The pipeline combines Gaia astrometric constraints, morphological indicators, infrared diagnostics, multi-survey cross-matching, and statistical filtering. A pilot analysis of ~12,500 sources successfully recovered a DESI-confirmed emission-line galaxy together with several high-priority AGN candidates.
 
 ### Pillar II: Astrometric Anomaly Ranking & Attribution
 This theme focuses on identifying stars whose astrometric behavior is inconsistent with a single-star model. By engineering a composite `tension_score` from Gaia DR3 noise flags (RUWE and AEN), the framework ranks targets for unresolved companions. Validated against NSS catalogs, the tension score significantly enriches for binary solutions (Odds Ratio = 6.12) and retains independent predictive power beyond raw RUWE. Further hypothesis testing suggests unresolved multiplicity is a major contributor to high-tension anomalies.
