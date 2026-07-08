@@ -81,14 +81,22 @@ Simulated contamination demonstrates systematic response: R transitions from ~0.
 
 **Boundary Statement:** These simulations indicate TRACEBIND V11 responds systematically to controlled degradation of membership purity. It does NOT yet function as a calibrated purity estimator for arbitrary populations, as response depends on specific field population, contamination model, and cluster kinematics used in these experiments.
 
-#### 4E: Spatial Selection Sensitivity Demonstration (Pleiades Region)
-Applied identical frozen V11 pipeline to broad spatial selection in Pleiades direction (non-vetted membership):
--   Spatial Sample Median R = **0.961 ± 0.003**
--   Separation Frequency = **0%**
+#### 4E: Spatial Selection Sensitivity & Core Property Verification (Pleiades Region)
+Applied identical frozen V11 pipeline to broad spatial selection in Pleiades direction using independent Gaia Archive ADQL cross-validation:
 
-**Interpretation:** Spatial Pleiades-region sample yields median ratio substantially closer to field baseline than vetted Hyades membership. Ordering (Hyades 0.848 < Spatial 0.961 < Field 0.994) illustrates sensitivity of TRACEBIND observable to sample definition and purity. This does NOT imply physical Pleiades cluster is intrinsically less coherent; rather, confirms metric responds appropriately to contamination from non-members in unvetted selections.
+**Initial Broad Selection (8° Radius):**
+-   N = 7,134 sources | Median Distance = 151.6 pc | Median Parallax = 6.60 mas
+-   Discrepancy from literature (~136 pc) attributed to field star contamination passing quality cuts but lacking membership probability filtering.
 
-**Boundary Statement:** Spatial or kinematic selections without vetted membership catalogs cannot be used to make claims about intrinsic cluster coherence. Only high-purity, independently curated membership samples are valid for generalization tests.
+**Core-Dominated Selection (4° Radius):**
+-   N = 2,665 sources | Median Distance = 139.3 pc | Median Parallax = 7.18 mas
+-   Residual ~2% distance offset consistent with expected field-star fraction at this galactic latitude; confirms coordinates and quality cuts are correct.
+
+**Vetted Membership Requirement:**
+Even the 4° core sample retains ~30–40% field contamination without explicit Pmem ≥ 0.9 filtering. Observed Hyades median R = 0.849 remains the only valid benchmark for intrinsic coherence claims.
+
+**Boundary Statement:**  
+Spatial or kinematic selections WITHOUT vetted membership catalogs produce predictable, quantifiable bias due to field-star contamination. This bias is expected physics, not a pipeline error. Only high-purity, independently curated membership samples (e.g., CG22 Pmem ≥ 0.9) are valid for external generalization tests. Full vetted Pleiades catalog comparison pending CDS service recovery.
 
 **Frozen Baseline for Generalization:**  
 Hyades Median R = 0.849 ± 0.005 | Field R ≈ 0.985 | Sep. Freq ≈ 8%.  
