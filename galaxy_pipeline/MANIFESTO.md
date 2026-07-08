@@ -158,5 +158,5 @@ The framework is designed to move systematically through four stages:
 
 Scientific progress often begins not with answers, but with careful observation. The role of TRACEBIND is to create conditions under which meaningful patterns can emerge from the data and then be tested rigorously.
 
-The sky does not belong to any pipeline. The measurements belong to the surveys. The interpretations belong to the evidence. TRACEBIND exists to help connect the two.
+
 ```
