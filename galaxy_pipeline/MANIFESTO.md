@@ -132,7 +132,7 @@ These results do NOT establish k=40 as optimal. Larger neighborhoods may improve
 *   **Implementation Stability:** Hyades median ratio = 0.849 ± 0.005 (stable across V3–V6 and benchmark reproduction).
 *   **Contamination Response:** Metric degrades gracefully toward field baseline as purity decreases, with separation frequency declining monotonically beyond 20% contamination.
 *   **Sample Definition Sensitivity:** Broad spatial selections yield intermediate ratios between vetted clusters and field, consistent with sensitivity to membership purity
-*   **Reproducible DR2→DR3 Benchmarking:** Successfully mapped 810 CG22 Pleiades members to Gaia DR3 via the official neighbour table, documenting one astrometric anomaly and producing a fully audited 749-star analysis sample.
+*   **Reproducible DR2→DR3 Benchmarking:** Successfully mapped 810 CG22 Pleiades members to Gaia DR3 via the official neighbour table, documenting one astrometric catalog anomaly and producing a fully audited 749-star analysis sample.
 
 ### Not Established
 TRACEBIND does not currently demonstrate:
