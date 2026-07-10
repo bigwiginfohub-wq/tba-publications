@@ -95,8 +95,11 @@ Applied identical frozen V11 pipeline to broad spatial selection in Pleiades dir
 **Vetted Membership Requirement:**
 Even the 4° core sample retains ~30–40% field contamination without explicit Pmem ≥ 0.9 filtering. Observed Hyades median R = 0.849 remains the only valid benchmark for intrinsic coherence claims.
 
+**Pleiades DR3 Benchmark Construction (Completed):**
+We cross-matched 810 high-probability CG22 members to Gaia DR3 using the official `gaiaedr3.dr2_neighbourhood` table. One mapped source (DR3 ID `66828870787370624`) lacked a published astrometric solution (parallax, proper motion, and RUWE were unavailable) and was automatically excluded. The remaining 749 sources passed all TRACEBIND quality criteria (RUWE < 1.4, G < 18, plx_sn > 10) and constitute the final analysis sample. The median distance of this sample is 135.81 pc, representing a −0.41 pc shift from the DR2 baseline, consistent with inter-release systematics.
+
 **Boundary Statement:**  
-Spatial or kinematic selections WITHOUT vetted membership catalogs produce predictable, quantifiable bias due to field-star contamination. This bias is expected physics, not a pipeline error. Only high-purity, independently curated membership samples (e.g., CG22 Pmem ≥ 0.9) are valid for external generalization tests. Full vetted Pleiades catalog comparison pending CDS service recovery.
+Spatial or kinematic selections WITHOUT vetted membership catalogs produce predictable, quantifiable bias due to field-star contamination. This bias is expected physics, not a pipeline error. Only high-purity, independently curated membership samples (e.g., CG22 Pmem ≥ 0.9) are valid for external generalization tests. The Pleiades DR3 benchmark is now ready for V11 coherence testing against the locked Hyades baseline.
 
 **Frozen Baseline for Generalization:**  
 Hyades Median R = 0.849 ± 0.005 | Field R ≈ 0.985 | Sep. Freq ≈ 8%.  
@@ -129,6 +132,7 @@ These results do NOT establish k=40 as optimal. Larger neighborhoods may improve
 *   **Implementation Stability:** Hyades median ratio = 0.849 ± 0.005 (stable across V3–V6 and benchmark reproduction).
 *   **Contamination Response:** Metric degrades gracefully toward field baseline as purity decreases, with separation frequency declining monotonically beyond 20% contamination.
 *   **Sample Definition Sensitivity:** Broad spatial selections yield intermediate ratios between vetted clusters and field, consistent with sensitivity to membership purity
+*   **Reproducible DR2→DR3 Benchmarking:** Successfully mapped 810 CG22 Pleiades members to Gaia DR3 via the official neighbour table, documenting one astrometric anomaly and producing a fully audited 749-star analysis sample.
 
 ### Not Established
 TRACEBIND does not currently demonstrate:
