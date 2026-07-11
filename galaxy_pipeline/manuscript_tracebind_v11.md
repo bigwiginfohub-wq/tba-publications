@@ -234,6 +234,7 @@ The current implementation has several limitations that will be addressed in fut
 
 \---
 
+To assess the stability of TRACEBIND-V11, we performed a robustness audit varying neighborhood size (k = 20, 30, 40, 50), null-model noise fraction (0.05, 0.10, 0.20), and random seed (42, 100, 2024). Across all 36 parameter combinations, the Hyades consistently produced a lower coherence ratio than the Pleiades. The mean difference in coherence ratio was ΔR = 0.069 ± 0.011, with the minimum observed separation remaining positive (0.050). These results indicate that the comparative ordering is robust over the explored parameter space and is not dependent on a particular choice of neighborhood size, null-model perturbation level, or random seed.
 
 
 \## 6. Conclusion and Future Work
