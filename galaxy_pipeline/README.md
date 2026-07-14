@@ -62,7 +62,6 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 
 * **Astrometric Anomalies:** A high tension score is evidence that the catalog description and the observed data deserve closer examination. It is *not* definitive proof of an exoplanet, brown dwarf, or specific companion mass.
 * **Kinematic Coherence ($C_f$):** Measures directional alignment, not physical association. Significant coherence does not by itself establish membership in stellar streams, nor does it provide evidence for or against Dark Matter, MOND, or Emergent Gravity.
-* **Local Coherence (V11):** Detects statistically significant position–velocity structure but does not yet achieve clean distributional separation under all control constructions. Overlap may arise from residual contamination, observational systematics, or the intrinsic nature of the operational boundary.
 * **Extragalactic Candidates:** Mid-infrared excesses are strongly consistent with AGN activity, but require spectroscopic follow-up for definitive classification.
 * **Local Coherence (V11):** Detects statistically significant position–velocity structure but does not yet propagate measurement uncertainties through the predictor. Hyades-specific subsampling sensitivity has been tested on one cluster only; generalization to older/diffuse clusters remains unproven. Evaluation on additional independently vetted open clusters spanning ages and dynamical states is required.
 ---
