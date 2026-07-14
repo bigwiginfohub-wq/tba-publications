@@ -26,17 +26,14 @@ A multi-stage filtering pipeline designed to isolate high-confidence extragalact
 * **External Validation Case:** The pipeline recovered a DESI-confirmed emission-line galaxy (`z = 0.033`, `ZWARN = 0`; Gaia DR3 `4575090461821845760`), providing an external validation case for the filtering methodology.
 * **Statistical Audit Output:** A **12,500-source** unbiased spherical sky baseline that isolated **3** high-priority, mid-infrared excess AGN candidates not identified in the SDSS cross-match used in this study.
 
-### Pillar 3: Galactic Kinematic Coherence Mapping (Phases 9 / D)
-An application of directional statistics to quantify localized kinematic coherence in Gaia proper-motion fields.
-* **The $C_f$ Metric:** A directional-coherence statistic analytically equivalent to the **Mean Resultant Length ($R$)**.
-* **Residual Coherence:** Permutation testing demonstrates that residual directional coherence remains highly significant (**$p < 0.001$**) after subtraction of first-order Galactic rotation (Oort constants) and solar reflex motion.
+### Pillar 3: Kinematic Coherence Mapping (TRACEBIND-V11)
+A quantitative observable for local position–velocity coherence, measuring the degree to which spatial proximity predicts velocity similarity beyond local density and dispersion alone. Distinct from gravitational binding; coherent populations (e.g., tidal streams) are not necessarily bound.
 
-### Pillar 4: Metric Validation & Operating Envelope
-The TRACEBIND-V11 observable has been rigorously validated through synthetic injection tests, real-data benchmarking on Hyades, and systematic contamination analysis. 
-*   **Calibration:** Simulated membership contamination demonstrates a smooth transition from coherent cluster values (~0.85) to field baselines (~0.99), establishing an empirical operating envelope.
-*   **Reproducibility:** Hyades median ratio remains stable at ~0.850 across independent code paths and RNG streams.
-*   **Operational Boundary:** Formal separation frequency declines monotonically with increasing contamination, defining the current discriminative limits of the V11 implementation.
-📊 **[View Purity Calibration Figure](galaxy_pipeline/figures/purity_calibration_figure.png)**
+-   **Verified Benchmarks:** Fully audited DR3 samples for Pleiades (N=749) and Hyades (N=820) constructed via official `gaiaedr3.dr2_neighbourhood` cross-match. All intermediate artifacts preserved for auditability.
+-   **Parameter Robustness:** Comparative ordering (Hyades R < Pleiades R) preserved across all 36 tested parameter combinations (k ∈ {20,30,40,50}, noise ∈ {0.05,0.10,0.20}, seeds {42,100,2024}). Mean ΔR = 0.069 ± 0.011.
+-   **Empirical Subsampling Stability:** 500 replicates × 80% fraction without replacement. Pleiades CV = 0.014, Hyades CV = 0.037 (~2.7× greater variability). Differential variability reproducible across random seeds (cross-seed range < 0.003). Physical interpretations remain hypotheses requiring further investigation.
+-   **Statistical Significance:** Both clusters show prediction errors significantly smaller than Monte Carlo null expectations (Pleiades p=0.003, Hyades p=0.002).
+-   **Frozen Configuration:** k=30, N_permutations=1000, noise_fraction=0.10, seed=42. See `/scripts/gaia_cf/` for full implementation.
 
 ---
 
@@ -57,9 +54,6 @@ Crossmatches against the Washington Double Star (WDS) catalog and the Ninth Cata
 This provides direct evidence that astrometric tension is strongly associated with unresolved multiplicity.
 
 ---
-
- **Sample Definition Sensitivity:** Broad spatial selections in the Pleiades direction yield ratios (~0.96) intermediate between vetted clusters (~0.85) and field stars (~0.99), confirming the metric's responsiveness to membership purity.
-
 ---
 
 ## ⚠️ Limitations & Epistemological Boundary
@@ -70,7 +64,7 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 * **Kinematic Coherence ($C_f$):** Measures directional alignment, not physical association. Significant coherence does not by itself establish membership in stellar streams, nor does it provide evidence for or against Dark Matter, MOND, or Emergent Gravity.
 * **Local Coherence (V11):** Detects statistically significant position–velocity structure but does not yet achieve clean distributional separation under all control constructions. Overlap may arise from residual contamination, observational systematics, or the intrinsic nature of the operational boundary.
 * **Extragalactic Candidates:** Mid-infrared excesses are strongly consistent with AGN activity, but require spectroscopic follow-up for definitive classification.
-
+* **Local Coherence (V11):** Detects statistically significant position–velocity structure but does not yet propagate measurement uncertainties through the predictor. Hyades-specific subsampling sensitivity has been tested on one cluster only; generalization to older/diffuse clusters remains unproven. Evaluation on additional independently vetted open clusters spanning ages and dynamical states is required.
 ---
 
 ## 📂 Repository Structure
@@ -85,8 +79,11 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 │   ├── phaseC_D_statistics/    # Monte Carlo, Permutations, Residuals
 │   ├── phase11_astrometry/     # Astrometric tension, NSS enrichment, ML validation
 │   ├── phase12_physical_origin/# GALEX, TIC, WDS/SB9 multiplicity crossmatches
-│   └── gaia_cf/                # TRACEBIND-V11 Metric & Phase 4 Hyades Application
-│       └── tracebind/          # Shared Locked V11 Metric Module
+│   └── gaia_cf/                # TRACEBIND-V11 Metric & Benchmarks
+│           ├── compute_subsample_stability.py
+│           ├── plot_subsample_distributions.py
+│           ├── verify_subsample_stability.py
+│           └── tracebind_v11_core.py
 ├── PAPER_PROSPECTUS.md         # Prospectus for the directional-statistics methodology paper
 ├── PHASE_11_PROSPECTUS.md      # Prospectus for the astrometric anomaly ranking framework
 ├── TRACEBIND_METHODS.md        # Frozen metrics (v1.0) and validation standards
@@ -113,16 +110,18 @@ In accordance with rigorous peer-review standards, this repository explicitly de
    python scripts/phaseC_D_statistics/phase_d_residual_solar_permutation.py
    ```
 
-4. **Run the TRACEBIND-V11 Hyades Application (Phase 4):**
-   ```bash
-   python scripts/gaia_cf/phase4_real_hyades.py
+4.  **Run TRACEBIND-V11 Benchmark Construction & Analysis:**
+    ```bash
+    python scripts/gaia_cf/compute_subsample_stability.py
+    python scripts/gaia_cf/plot_subsample_distributions.py
+    ```
+    See `/scripts/gaia_cf/` for full pipeline including benchmark construction, robustness audits, and visualization.
    ```
 
 5. **Run the Extragalactic Discovery Pipeline:**
    ```bash
    python scripts/phase1_7_agn/batch_pipeline_final.py
    ```
-
 ---
 
 ## 📜 Project Philosophy: Discovery Through Model Failure
