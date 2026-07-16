@@ -1,7 +1,7 @@
 
 # TRACEBIND-V11: Reproducible Gaia DR2–DR3 Benchmark Construction and a Leave-One-Out Metric for Local Kinematic Coherence
 
-**Author:** Mohammed Ali (The Bridge Architect)
+**Author:** Mohammed Ali (Independent Researcher)
 **Date:** July 2026
 **Version:** 2.0 
 ---
