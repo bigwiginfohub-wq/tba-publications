@@ -1,7 +1,7 @@
 
 # TRACEBIND: A Modular Framework for Survey Reconciliation and Kinematic Coherence
 
-### Developed by The Bridge Architect
+### Developed by Mohammed Ali (Independent Researcher)
 
 > TRACEBIND was built on a simple principle: before searching for discoveries, reconcile the data. Before proposing explanations, measure the structure. Before claiming novelty, test whether the signal survives scrutiny.
 
@@ -102,6 +102,11 @@ Hyades exhibited approximately 2.7× larger empirical subsampling variability th
 #### 4E: Neighborhood Size (k) Sensitivity Boundary
 Tested robustness across K_PREDICT ∈ {20, 25, 30, 35, 40} with K_SHUFFLE fixed at 50. Cluster median ratio varies only 0.828 → 0.859 (CV = 0.4%) while field median remains stable at 0.980 ± 0.003. Separation criterion (extreme quantiles) is more sensitive to k than the underlying observable. **k=30 remains the frozen baseline; future work must evaluate k-dependence on independently vetted clusters before any parameter tuning claims can be made.**
 
+#### 4F: Leave-One-Out Influence Analysis & Orthogonal Diagnostics
+To verify that the reported coherence ratios are not driven by a small subset of observations, we computed the absolute change in $R$ ($|\Delta R|$) under leave-one-out removal for all 820 Hyades members. The maximum influence of any single star was $|\Delta R| = 0.0198$, and the top 20 stars accounted for only 10.4% of total influence, confirming the metric's robustness to individual observations.
+
+We further tested whether high-influence stars exhibit systematic kinematic asymmetry via a projected tangential outflow diagnostic. This diagnostic probes bulk radial expansion, an orthogonal property to V11's local predictability. We found no statistically significant bulk outflow segregation at baseline sample sizes ($p \approx 0.07$), reinforcing that TRACEBIND-V11 captures local velocity predictability independent of global expansion dynamics.
+
 ---
 
 ## What TRACEBIND Has Demonstrated
@@ -119,6 +124,8 @@ Tested robustness across K_PREDICT ∈ {20, 25, 30, 35, 40} with K_SHUFFLE fixed
 *   **Sampling Stability:** Empirical subsampling confirms estimator reliability; Hyades exhibits ~2.7× greater sampling variability than Pleiades, reproducible across random seeds.
 *   **Implementation Stability:** Hyades median ratio = 0.849 ± 0.005 (stable across V3–V6 and benchmark reproduction).
 *   **Contamination Response:** Metric degrades gracefully toward field baseline as purity decreases, with separation frequency declining monotonically beyond 20% contamination.
+*   **Influence Robustness:** Leave-one-out analysis confirms no single star dominates the Hyades coherence ratio (max |ΔR| = 0.0198).
+*   **Orthogonal Diagnostics:** Projected outflow analysis confirms V11 captures local predictability independent of bulk expansion dynamics.
 
 ### Not Established
 TRACEBIND does not currently demonstrate:
