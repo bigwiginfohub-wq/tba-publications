@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "TRACEBIND-V11: Reproducible Gaia DR2–DR3 Benchmark Construction and a Leave-One-Out Metric for Local Kinematic Coherence"
+authors:
+  - family-names: "[Muhammed Syed Ibrahim]"
+    given-names: "[Mohammed Ali]"
+    affiliation: "Independent Researcher, Chennai, India"
+   
+version: 1.0.0
+date-released: 2026-07-16
+license: CC0-1.0
+repository-code: "https://github.com/bigwiginfohub-wq/tba-publications/tree/main/galaxy_pipeline"
+type: software
+keywords:
+  - "Gaia DR3"
+  - "Open Clusters"
+  - "Kinematic Coherence"
+  - "Astrometry"
+  - "Stellar Kinematics"
+  - "Pleiades"
+  - "Hyades"
