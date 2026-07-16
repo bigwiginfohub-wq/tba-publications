@@ -33,6 +33,8 @@ A quantitative observable for local position–velocity coherence, measuring the
 -   **Parameter Robustness:** Comparative ordering (Hyades R < Pleiades R) preserved across all 36 tested parameter combinations (k ∈ {20,30,40,50}, noise ∈ {0.05,0.10,0.20}, seeds {42,100,2024}). Mean ΔR = 0.069 ± 0.011.
 -   **Empirical Subsampling Stability:** 500 replicates × 80% fraction without replacement. Pleiades CV = 0.014, Hyades CV = 0.037 (~2.7× greater variability). Differential variability reproducible across random seeds (cross-seed range < 0.003). Physical interpretations remain hypotheses requiring further investigation.
 -   **Statistical Significance:** Both clusters show prediction errors significantly smaller than Monte Carlo null expectations (Pleiades p=0.003, Hyades p=0.002).
+-   **Influence Robustness:** Leave-one-out analysis confirms no single star dominates the Hyades coherence ratio (max |ΔR| = 0.0198).
+-   **Orthogonal Diagnostics:** Projected outflow analysis confirms V11 captures local predictability independent of bulk expansion dynamics.
 -   **Frozen Configuration:** k=30, N_permutations=1000, noise_fraction=0.10, seed=42. See `/scripts/gaia_cf/` for full implementation.
 
 ---
@@ -79,10 +81,14 @@ In accordance with rigorous peer-review standards, this repository explicitly de
 │   ├── phase11_astrometry/     # Astrometric tension, NSS enrichment, ML validation
 │   ├── phase12_physical_origin/# GALEX, TIC, WDS/SB9 multiplicity crossmatches
 │   └── gaia_cf/                # TRACEBIND-V11 Metric & Benchmarks
+│           ├── tracebind_v11_core.py
 │           ├── compute_subsample_stability.py
 │           ├── plot_subsample_distributions.py
 │           ├── verify_subsample_stability.py
-│           └── tracebind_v11_core.py
+│           ├── analyze_v11_influence.py       # Leave-one-out influence analysis
+│           ├── diagnose_hyades_influence.py   # Spatial & property diagnostics
+│           ├── verify_graph_diagnostics.py    # Graph structure verification
+│           └── analyze_tangential_outflow.py  # Projected outflow analysis
 ├── PAPER_PROSPECTUS.md         # Prospectus for the directional-statistics methodology paper
 ├── PHASE_11_PROSPECTUS.md      # Prospectus for the astrometric anomaly ranking framework
 ├── TRACEBIND_METHODS.md        # Frozen metrics (v1.0) and validation standards
@@ -113,6 +119,11 @@ In accordance with rigorous peer-review standards, this repository explicitly de
     ```bash
     python scripts/gaia_cf/compute_subsample_stability.py
     python scripts/gaia_cf/plot_subsample_distributions.py
+    ```
+    **Run Advanced Diagnostics (Influence & Outflow):**
+    ```bash
+    python scripts/gaia_cf/analyze_v11_influence.py
+    python scripts/gaia_cf/analyze_tangential_outflow.py
     ```
     See `/scripts/gaia_cf/` for full pipeline including benchmark construction, robustness audits, and visualization.
    ```
