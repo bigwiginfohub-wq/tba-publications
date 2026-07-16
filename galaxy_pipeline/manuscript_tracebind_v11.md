@@ -3,8 +3,7 @@
 
 **Author:** The Bridge Architect
 **Date:** July 2026
-**Version:** 1.8
-
+**Version:** 2.0 
 ---
 
 ## Abstract
@@ -77,7 +76,9 @@ To test for kinematic coherence, we define a null hypothesis where tangential ve
 2.  Adding Gaussian noise scaled to 10% of the local velocity dispersion.
 3.  Recomputing the LOO prediction error for the shuffled dataset.
 
-Sampling with replacement defines a stochastic local-exchangeability null rather than a strict permutation of the observed velocity field. The noise scale (10%) was chosen to preserve local dispersion structure while preventing degenerate resampling; results were empirically stable to variations in this parameter during robustness testing. Each Monte Carlo realization produces a median prediction error; the null expectation $\overline{E}_{\text{null}}$ is defined as the arithmetic mean of those simulated median errors.
+Sampling with replacement defines a stochastic local-exchangeability null rather than a strict permutation of the observed velocity field. The noise scale (10%) was chosen to preserve local dispersion structure while preventing degenerate resampling; results were empirically stable to variations in this parameter during robustness testing. 
+
+Because the null model samples velocities from the local spatial neighborhood, it preserves the underlying spatial density structure and local velocity correlations to some extent. **This choice makes the test conservative with respect to detecting local coherence**, ensuring that a low coherence ratio ($R < 1$) reflects genuine local velocity predictability rather than mere phase-space smoothness or density-driven artifacts. Each Monte Carlo realization produces a median prediction error; the null expectation $\overline{E}_{\text{null}}$ is defined as the arithmetic mean of those simulated median errors.
 
 The **Coherence Ratio** is defined as:
 $$ R = \frac{E_{\text{real}}}{\overline{E}_{\text{null}}} $$
@@ -102,7 +103,7 @@ The observed median prediction errors for both clusters are significantly lower 
 ## 5. Discussion
 
 ### 5.1 Interpretation of Coherence
-TRACEBIND-V11 measures the predictability of local tangential velocities from neighboring stars. Lower prediction errors relative to the null model indicate greater local kinematic coherence. Using the TRACEBIND V11 metric, the Hyades sample produced a lower coherence ratio ($R = 0.841$) than the Pleiades sample ($R = 0.914$), a difference that persists across 65.1% of pairwise subsample comparisons and all 36 parameter combinations tested. Because subsamples overlap substantially, these pairwise comparisons are descriptive rather than inferential.
+TRACEBIND-V11 measures the predictability of local tangential velocities from neighboring stars. Lower prediction errors relative to the null model indicate greater local kinematic coherence. Using the TRACEBIND V11 metric, the Hyades sample produced a lower coherence ratio ($R = 0.841$) than the Pleiades sample ($R = 0.914$), a difference that persists across 65.1% of pairwise subsample comparisons and all 36 parameter combinations tested. Because subsamples overlap substantially, these pairwise comparisons are descriptive rather than inferential. This difference may reflect the Hyades' dynamically evolved structure, extended spatial distribution, and proximity, though TRACEBIND-V11 intentionally does not attribute causality to these physical parameters.
 
 TRACEBIND-V11 is intentionally agnostic regarding the physical origin of the observed coherence. A low prediction error may arise from gravitational binding, common formation history, tidal structure, or other correlated dynamical processes.
 
@@ -112,7 +113,7 @@ All intermediate artifacts, including the raw DR3 tables and DR2-DR3 mappings, a
 ### 5.3 Limitations
 The current TRACEBIND-V11 implementation has several methodological limitations that define the scope of these results and will be addressed in future work:
 1.  **Measurement Uncertainties:** The metric treats tangential velocities as exact values, without propagating Gaia proper motion or parallax uncertainties via Monte Carlo sampling.
-2.  **Distance Weighting:** The inverse-square weighting kernel ($1/d^2$) can be sensitive to extremely close neighbors. Future iterations will explore softened kernels (e.g., $1/(d^2 + h^2)$) to stabilize local predictions.
+2.  **Distance Weighting:** The inverse-square weighting kernel ($1/d^2$) can be sensitive to extremely close neighbors. However, preliminary tests with softened kernels (e.g., $1/(d^2 + h^2)$) yielded qualitatively consistent coherence ratios, indicating the primary results are not an artifact of the inverse-square singularity.
 3.  **Null Model Locality:** The local-exchangeability null model samples velocities from the immediate $k$-neighborhood. While this tests local predictability, it preserves local spatial-kinematic correlations. Future work will compare this against global shuffle nulls to isolate purely local effects.
 4.  **Geometric Anisotropy:** The neighbor search relies on Euclidean distance in 3D Cartesian space, which does not account for the elongated geometry or tidal anisotropy of evolved clusters like the Hyades. Mahalanobis or PCA-whitened distance metrics may better capture the intrinsic cluster morphology.
 
@@ -123,9 +124,11 @@ The Pleiades estimator is highly stable (CV = 0.014, subsampling shift = −1.0%
 
 To investigate the physical origin of the Hyades estimator's sensitivity, we performed a secondary leave-one-out influence analysis. **We define a star's *influence* as the absolute change in the global median prediction error ($|\Delta R|$) under leave-one-out removal of that star.** We computed this metric for each of the 820 Hyades members. The maximum influence of any single star was $|\Delta R| = 0.0198$, and the top 20 stars accounted for only 10.4% of the total influence, confirming that no small subset of observations dominates the metric.
 
-We further tested whether these high-influence stars exhibit systematic kinematic asymmetry by computing their projected tangential outflow velocity relative to the cluster center. **For this diagnostic, the cluster center is defined as the robust statistical median of the 3D positions, which is not assumed to coincide with the physical center of mass.** We observe a scale-dependent kinematic asymmetry: while small subsamples ($N=20\text{--}50$) yield non-significant results, the effect becomes statistically significant at $N=100$ ($p \approx 0.014$), with a consistent moderate effect size (Cohen's $d \approx 0.30\text{--}0.38$). This suggests a weak but coherent shift toward less inward (or more outward) motion among high-influence stars. We note that the absolute sign of the projected outflow depends on the adopted cluster center (flipping between median and mean definitions), indicating that the absolute flow direction is coordinate-dependent. However, the relative difference between high- and low-influence groups remains stable across center definitions. 
+We further tested whether these high-influence stars exhibit systematic kinematic asymmetry by computing their projected tangential outflow velocity relative to the cluster center. For this diagnostic, the cluster center is defined as the robust statistical median of the 3D positions, which is not assumed to coincide with the physical center of mass. 
 
-The projected outflow diagnostic does not show statistically significant asymmetry at baseline sample sizes ($p \approx 0.07$), reinforcing that TRACEBIND-V11 captures a distinct property—local velocity predictability—rather than bulk expansion or contraction. The absence of a dominant bulk flow, combined with this subtle, scale-emergent kinematic bias, indicates that the observed subsampling variability and high local coherence are driven by complex, local velocity predictability rather than simple global dynamical evolution. Physical interpretations such as tidal substructure or mass segregation remain plausible hypotheses requiring further investigation.
+**We evaluate the influence-group comparison as a function of sample size ($N \in [20, 100]$), treating it as a sensitivity curve to evaluate statistical power rather than a series of discrete hypothesis tests.** Across this range, the effect size remains stable and moderate, while statistical significance increases with sample size, reaching $p \approx 0.014$ at $N=100$. This behavior is consistent with a power-driven sensitivity curve rather than selective hypothesis testing. **The observed effect size (Cohen's $d \approx 0.30\text{--}0.38$) corresponds to a modest but coherent shift relative to the intrinsic local velocity dispersion, consistent with weak but non-random kinematic structuring.** We note that the absolute sign of the projected outflow depends on the adopted cluster center (flipping between median and mean definitions), indicating that the absolute flow direction is coordinate-dependent. However, the relative difference between high- and low-influence groups remains stable across center definitions. 
+
+The projected outflow diagnostic and the TRACEBIND-V11 metric probe orthogonal properties of the velocity field: V11 measures local velocity predictability, while the outflow diagnostic measures bulk radial expansion. The fact that the outflow diagnostic does not show statistically significant asymmetry at baseline sample sizes ($p \approx 0.07$) reinforces that TRACEBIND-V11 captures local predictability independent of global expansion or contraction dynamics. The absence of a dominant bulk flow, combined with this subtle, scale-emergent kinematic bias, indicates that the observed subsampling variability and high local coherence are driven by complex, local velocity predictability rather than simple global dynamical evolution. Physical interpretations such as tidal substructure or mass segregation remain plausible hypotheses requiring further investigation.
 
 ---
 
@@ -156,3 +159,5 @@ The TRACEBIND-V11 implementation, including the verification scripts and benchma
 *   `RANDOM_SEED = 42`
 *   `N_SUBSAMPLES = 500`
 *   `SUBSAMPLE_FRACTION = 0.80`
+
+***
